@@ -1,0 +1,179 @@
+{"irr": [
+  {
+    "word": "sum",
+    "word_more": "sum, irr: I am",
+    "forms": {
+      "s_1": "sum",
+      "s_2": "es",
+      "s_3": "est",
+      "p_1": "sumus",
+      "p_2": "estis",
+      "p_3": "sunt"
+    }
+  },
+  {
+    "word": "eo",
+    "word_more": "eo, irr. 4d: I go",
+    "forms": {
+      "s_1": "eo",
+      "s_2": "is",
+      "s_3": "it",
+      "p_1": "imus",
+      "p_2": "itis",
+      "p_3": "eunt"
+    }
+  }
+],
+"c1": [
+  {
+    "word": "amo",
+    "word_more": "amo, 1d: I love",
+    "forms": {
+      "s_1": "amo",
+      "s_2": "amas",
+      "s_3": "amat",
+      "p_1": "amamus",
+      "p_2": "amatis",
+      "p_3": "amant"
+    }
+  },
+  {
+    "word": "impero",
+    "word_more": "impero, 1d: I order",
+    "forms": {
+      "s_1": "impero",
+      "s_2": "imperas",
+      "s_3": "imperat",
+      "p_1": "imperamus",
+      "p_2": "imperatis",
+      "p_3": "imperant"
+    }
+  },
+  {
+    "word": "laudo",
+    "word_more": "laudo, 1d: I praise",
+    "forms": {
+      "s_1": "laudo",
+      "s_2": "laudas",
+      "s_3": "laudat",
+      "p_1": "laudamus",
+      "p_2": "laudatis",
+      "p_3": "laudant"
+    }
+  }
+],
+"c2": [
+  {
+    "word": "video",
+    "word_more": "video, 2d: I see",
+    "forms": {
+      "s_1": "video",
+      "s_2": "vides",
+      "s_3": "videt",
+      "p_1": "videmus",
+      "p_2": "videtis",
+      "p_3": "vident"
+    }
+  },
+  {
+    "word": "debeo",
+    "word_more": "debeo, 2d: I owe/I am obliged",
+    "forms": {
+      "s_1": "debeo",
+      "s_2": "debes",
+      "s_3": "debet",
+      "p_1": "debemus",
+      "p_2": "debetis",
+      "p_3": "debent"
+    }
+  },
+  {
+    "word": "doceo",
+    "word_more": "doceo, 2d: I teach",
+    "forms": {
+      "s_1": "doceo",
+      "s_2": "doces",
+      "s_3": "docet",
+      "p_1": "docemus",
+      "p_2": "docetis",
+      "p_3": "docent"
+    }
+  }
+],
+"c3": [
+  {
+    "word": "duco",
+    "word_more": "duco, 3d: I lead",
+    "forms": {
+      "s_1": "duco",
+      "s_2": "ducis",
+      "s_3": "ducit",
+      "p_1": "ducimus",
+      "p_2": "ducitis",
+      "p_3": "ducunt"
+    }
+  },
+  {
+    "word": "carpo",
+    "word_more": "carpo, 3d: I pick",
+    "forms": {
+      "s_1": "carpo",
+      "s_2": "carpis",
+      "s_3": "carpit",
+      "p_1": "carpimus",
+      "p_2": "carpitis",
+      "p_3": "carpunt"
+    }
+  },
+  {
+    "word": "cedo",
+    "word_more": "cedo, 3d: I yield/I depart",
+    "forms": {
+      "s_1": "cedo",
+      "s_2": "cedis",
+      "s_3": "cedit",
+      "p_1": "cedimus",
+      "p_2": "ceditis",
+      "p_3": "cedunt"
+    }
+  }
+],
+"c4": [
+  {
+    "word": "audio",
+    "word_more": "audio, 4d: I hear",
+    "forms": {
+      "s_1": "audio",
+      "s_2": "audis",
+      "s_3": "audit",
+      "p_1": "audimus",
+      "p_2": "auditis",
+      "p_3": "audiunt"
+    }
+  },
+  {
+    "word": "custodio",
+    "word_more": "custodio, 4d: I guard",
+    "forms": {
+      "s_1": "custodio",
+      "s_2": "custodis",
+      "s_3": "custodit",
+      "p_1": "custodimus",
+      "p_2": "custoditis",
+      "p_3": "custodiunt"
+    }
+  },
+  {
+    "word": "dormio",
+    "word_more": "dormio, 4d: I sleep",
+    "forms": {
+      "s_1": "dormio",
+      "s_2": "dormis",
+      "s_3": "dormit",
+      "p_1": "dormimus",
+      "p_2": "dormitis",
+      "p_3": "dormiunt"
+    }
+  }
+]
+}
