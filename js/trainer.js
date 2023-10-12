@@ -29,6 +29,24 @@ async function doFunction(url, type, first_field) {
 				document.getElementById("word").textContent = word["word_more"];
 			}
 		}
+		else if (type === "noun_sga") {
+
+			let chosen_decl = [];
+			let decl_nums = ["o_stems"];
+			for (num of decl_nums) {
+				if (document.getElementById(num).checked) {
+					chosen_decl = chosen_decl.concat(json[num]);
+				}
+			}
+
+			let random_int = Math.floor(Math.random() * chosen_decl.length);
+			word = chosen_decl[random_int];
+			if (document.getElementById("minim").checked) {
+				document.getElementById("word").textContent = word["word"];
+			} else {
+				document.getElementById("word").textContent = word["word_more"];
+			}
+		}
 		else if (type === "verb") {
 			let chosen_conj = [];
 			let conj_nums = ["irr", "c1", "c2", "c3", "c4"];
@@ -54,7 +72,18 @@ async function doFunction(url, type, first_field) {
 		for (const [key, value] of Object.entries(word["forms"])) {
 			document.getElementById(key).style.backgroundColor = "white";
 			document.getElementById(key).value = "";
-			document.getElementById(key + "_cor").innerHTML = "<i>" + hidden_text + "</i>";
+			if (type != "noun_sga") {
+				document.getElementById(key + "_cor").innerHTML = "<i>" + hidden_text + "</i>";
+			}
+			else {
+				let cases = ["nom", "acc", "gen", "dat", "voc"];
+				let numbers = ["s", "p", "d"];
+				for (a_case of cases) {
+					for (number of numbers) {
+						document.getElementById(number + "_" + a_case + "_cor").innerHTML = "<i>" + hidden_text + "</i>";
+					}
+				}
+			}
 		}
 		document.getElementById(first_field).focus();
 		return 0;
@@ -70,7 +99,26 @@ async function doFunction(url, type, first_field) {
 			element.style.backgroundColor = "red";
 			wrong = 1;
 		}
-		document.getElementById(key + "_cor").textContent = value;
+		if (type != "noun_sga") {
+			document.getElementById(key + "_cor").textContent = value;
+		}
+	}
+	if (type === "noun_sga") {
+		let cases = ["nom", "acc", "gen", "dat", "voc"];
+		let numbers = ["s", "p", "d"];
+		let answer = "";
+		let forms = word["forms"];
+			for (a_case of cases) {
+				for (number of numbers) {
+					if (number === "d" || a_case === "voc") {
+						answer = forms[number + "_" + a_case + "_part"] + "<sup>" + forms[number + "_" + a_case + "_part_im"].toUpperCase() + "</sup> " + forms[number + "_" + a_case] + "<sup>" + forms[number + "_" + a_case + "_im"].toUpperCase() + "</sup>";
+					}
+					else {
+						answer = forms[number + "_" + a_case] + "<sup>" + forms[number + "_" + a_case + "_im"].toUpperCase() + "</sup>";
+					}
+					document.getElementById(number + "_" + a_case + "_cor").innerHTML = answer;
+				}
+			}
 	}
 	if (wrong === 0) {
 			right += 1;

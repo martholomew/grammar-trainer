@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Learn Old Irish Nouns</title>
+	<style>
+		input {width: 7em;}
+		.answer {color: grey;padding-right: 1em;}
+		.results {color: grey;padding-left: 1em;}
+		.num {width: 1em;}
+		.im {width: 1em;}
+	</style>
+	<script src="js/trainer.js"></script>
+</head>
+<body>
+<h4 id="word"><i>[word], -[gen.]+, [stem gen.]: [def.]</i></h4>
+<table>
+	<form action="javascript:void(0);">
+		<tr>
+			<td></td>
+			<td>pt.</td>
+			<td>IM</td>
+			<td>sing.</td>
+			<td>IM</td>
+			<td></td>
+			<td></td>
+			<td>pt.</td>
+			<td>IM</td>
+			<td>plur.</td>
+			<td>IM</td>
+			<td></td>
+			<td></td>
+			<td>#</td>
+			<td>IM</td>
+			<td>dual</td>
+			<td>IM</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="s_nom">nom.</label>
+			</td>
+			<td></td>
+			<td></td>
+			<td>
+				<input type="text" id="s_nom" name="s_nom" tabindex="1" autofocus>
+			</td>
+			<td>
+				<input class="im" type="text" id="s_nom_im" name="s_nom_im" tabindex="2">
+			</td>
+			<td>
+				<a class="answer" id="s_nom_cor"><i>hidden</i></a>
+			</td>
+			<td>
+				<label for="p_nom">nom.</label>
+			</td>
+			<td></td>
+			<td></td>
+			<td>
+				<input type="text" id="p_nom" name="p_nom" tabindex="13">
+			</td>
+			<td>
+				<input class="im" type="text" id="p_nom_im" name="p_nom_im" tabindex="14">
+			</td>
+			<td>
+				<a class="answer" id="p_nom_cor"><i>hidden</i></a>
+			</td>
+			<td>
+				<label for="d_nom">nom.</label>
+			</td>
+			<td>
+				<input class="num" type="text" id="d_nom_part" name="d_nom_part" tabindex="25">
+			</td>
+			<td>
+				<input class="im" type="text" id="d_nom_part_im" name="d_nom_part_im" tabindex="26">
+			</td>
+			<td>
+				<input type="text" id="d_nom" name="d_nom" tabindex="27">
+			</td>
+			<td>
+				<input class="im" type="text" id="d_nom_im" name="d_nom_im" tabindex="28">
+			</td>
+			<td>
+				<a class="answer" id="d_nom_cor"><i>hidden</i></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="s_acc">acc.</label>
+			</td>
+			<td></td>
+			<td></td>
+			<td>
+				<input type="text" id="s_acc" name="s_acc" tabindex="3">
+			</td>
+			<td>
+				<input class="im" type="text" id="s_acc_im" name="s_acc_im" tabindex="4">
+			</td>
+			<td>
+				<a class="answer" id="s_acc_cor"><i>hidden</i></a>
+			</td>
+			<td>
+				<label for="p_acc">acc.</label>
+			</td>
+			<td></td>
+			<td></td>
+			<td>
+				<input type="text" id="p_acc" name="p_acc" tabindex="15">
+			</td>
+			<td>
+				<input class="im" type="text" id="p_acc_im" name="p_acc_im" tabindex="16">
+			</td>
+			<td>
+				<a class="answer" id="p_acc_cor"><i>hidden</i></a>
+			</td>
+			<td>
+				<label for="d_acc">acc.</label>
+			</td>
+			<td>
+				<input class="num" type="text" id="d_acc_part" name="d_acc_part" tabindex="29">
+			</td>
+			<td>
+				<input class="im" type="text" id="d_acc_part_im" name="d_acc_part_im" tabindex="30">
+			</td>
+			<td>
+				<input type="text" id="d_acc" name="d_acc" tabindex="31">
+			</td>
+			<td>
+				<input class="im" type="text" id="d_acc_im" name="d_acc_im" tabindex="32">
+			</td>
+			<td>
+				<a class="answer" id="d_acc_cor"><i>hidden</i></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="s_gen">gen.</label>
+			</td>
+			<td></td>
+			<td></td>
+			<td>
+				<input type="text" id="s_gen" name="s_gen" tabindex="5">
+			</td>
+			<td>
+				<input class="im" type="text" id="s_gen_im" name="s_gen_im" tabindex="6">
+			</td>
+			<td>
+				<a class="answer" id="s_gen_cor"><i>hidden</i></a>
+			</td>
+			<td>
+				<label for="p_gen">gen.</label>
+			</td>
+			<td></td>
+			<td></td>
+			<td>
+				<input type="text" id="p_gen" name="p_gen" tabindex="17">
+			</td>
+			<td>
+				<input class="im" type="text" id="p_gen_im" name="p_gen_im" tabindex="18">
+			</td>
+			<td>
+				<a class="answer" id="p_gen_cor"><i>hidden</i></a>
+			</td>
+			<td>
+				<label for="d_gen">gen.</label>
+			</td>
+			<td>
+				<input class="num" type="text" id="d_gen_part" name="d_gen_part" tabindex="33">
+			</td>
+			<td>
+				<input class="im" type="text" id="d_gen_part_im" name="d_gen_part_im" tabindex="34">
+			</td>
+			<td>
+				<input type="text" id="d_gen" name="d_gen" tabindex="35">
+			</td>
+			<td>
+				<input class="im" type="text" id="d_gen_im" name="d_gen_im" tabindex="36">
+			</td>
+			<td>
+				<a class="answer" id="d_gen_cor"><i>hidden</i></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="s_dat">dat.</label>
+			</td>
+			<td></td>
+			<td></td>
+			<td>
+				<input type="text" id="s_dat" name="s_dat" tabindex="7">
+			</td>
+			<td>
+				<input class="im" type="text" id="s_dat_im" name="s_dat_im" tabindex="8">
+			</td>
+			<td>
+				<a class="answer" id="s_dat_cor"><i>hidden</i></a>
+			</td>
+			<td>
+				<label for="p_dat">dat.</label>
+			</td>
+			<td></td>
+			<td></td>
+			<td>
+				<input type="text" id="p_dat" name="p_dat" tabindex="19">
+			</td>
+			<td>
+				<input class="im" type="text" id="p_dat_im" name="p_dat_im" tabindex="20">
+			</td>
+			<td>
+				<a class="answer" id="p_dat_cor"><i>hidden</i></a>
+			</td>
+			<td>
+				<label for="d_dat">dat.</label>
+			</td>
+			<td>
+				<input class="num" type="text" id="d_dat_part" name="d_dat_part" tabindex="37">
+			</td>
+			<td>
+				<input class="im" type="text" id="d_dat_part_im" name="d_dat_part_im" tabindex="38">
+			</td>
+			<td>
+				<input type="text" id="d_dat" name="d_dat" tabindex="39">
+			</td>
+			<td>
+				<input class="im" type="text" id="d_dat_im" name="d_dat_im" tabindex="40">
+			</td>
+			<td>
+				<a class="answer" id="d_dat_cor"><i>hidden</i></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="s_voc">voc.</label>
+			</td>
+			<td>
+				<input class="num" type="text" id="s_voc_part" name="s_voc_part" tabindex="9">
+			</td>
+			<td>
+				<input class="im" type="text" id="s_voc_part_im" name="s_voc_part_im" tabindex="10">
+			</td>
+			<td>
+				<input type="text" id="s_voc" name="s_voc" tabindex="11">
+			</td>
+			<td>
+				<input class="im" type="text" id="s_voc_im" name="s_voc_im" tabindex="12">
+			</td>
+			<td>
+				<a class="answer" id="s_voc_cor"><i>hidden</i></a>
+			</td>
+			<td>
+				<label for="p_voc">voc.</label>
+			</td>
+			<td>
+				<input class="num" type="text" id="p_voc_part" name="p_voc_part" tabindex="21">
+			</td>
+			<td>
+				<input class="im" type="text" id="p_voc_part_im" name="p_voc_part_im" tabindex="22">
+			</td>
+			<td>
+				<input type="text" id="p_voc" name="p_voc" tabindex="23">
+			</td>
+			<td>
+				<input class="im" type="text" id="p_voc_im" name="p_voc_im" tabindex="24">
+			</td>
+			<td>
+				<a class="answer" id="p_voc_cor"><i>hidden</i></a>
+			</td>
+			<td>
+				<label for="d_voc">voc.</label>
+			</td>
+			<td>
+				<input class="num" type="text" id="d_voc_part" name="d_voc_part" tabindex="41">
+			</td>
+			<td>
+				<input class="im" type="text" id="d_voc_part_im" name="d_voc_part_im" tabindex="42">
+			</td>
+			<td>
+				<input type="text" id="d_voc" name="d_voc" tabindex="43">
+			</td>
+			<td>
+				<input class="im" type="text" id="d_voc_im" name="d_voc_im" tabindex="44">
+			</td>
+			<td>
+				<a class="answer" id="d_voc_cor"><i>hidden</i></a>
+			</td>
+			<td>
+				<a class="results" id="results"><i>0/0</i></a>
+			</td>
+		</tr>
+		<button onclick="doFunction('https://martholomew.github.io/grammar-trainer/json/sga_noun.json', 'noun_sga', 's_nom');" hidden/>
+	</form>
+</table>
+<details>
+	<summary>Instructions</summary>
+	<ol>
+		<li>Start by pressing [ENTER]</li>
+		<li>[TAB] between the textboxes, filling them all in</li>
+		<li>NB! The "IM" spaces are for Initial Mutations. The three possible answers are "l", "n", or "h", standing for "lenition", "nasalisation", and "aspiration" respectively.</li>
+		<li>NB! The "pt." spaces are for particles, which are only before the vocative. The "#" space is for the number two, which is always before the dual case.</li>
+		<li>Press [ENTER], wrong answers will be red, right answers will be green</li>
+		<li>Press [ENTER] again to continue to the next question</li>
+		<li>Repeat until u r a genus!</li>
+	</ol>
+</details>
+<details>
+	<summary>Declensions</summary>
+		<input type="checkbox" id="o_stems" name="o_stems" value="true" checked>
+		<label for="o_stems">-o- Stems</label>
+</details>
+<details>
+	<summary>Options</summary>
+		<input type="checkbox" id="minim" name="minim" value="true">
+		<label for="minim">Minimum Info</label>
+</details>
+</body>
+<!--
+{
+	"word": "",
+	"word_more": ", , -o- .: ",
+	"forms": {
+		"s_nom":"",
+		"s_nom_im": "",
+		"p_nom": "",
+		"p_nom_im": "",
+		"d_nom_part": "dá",
+		"d_nom_part_im": "",
+		"d_nom": "",
+		"d_nom_im": "",
+		"s_acc": "",
+		"s_acc_im": "",
+		"p_acc": "",
+		"p_acc_im": "",
+		"d_acc_part": "dá",
+		"d_acc_part_im": "",
+		"d_acc": "",
+		"d_acc_im": "",
+		"s_gen": "",
+		"s_gen_im": "",
+		"p_gen": "",
+		"p_gen_im": "",
+		"d_gen_part": "dá",
+		"d_gen_part_im": "",
+		"d_gen": "",
+		"d_gen_im": "",
+		"s_dat": "",
+		"s_dat_im": "",
+		"p_dat": "",
+		"p_dat_im": "",
+		"d_dat_part": "dib",
+		"d_dat_part_im": "n",
+		"d_dat": "",
+		"d_dat_im": "",
+		"s_voc_part": "á",
+		"s_voc_part_im": "",
+		"s_voc": "",
+		"s_voc_im": "",
+		"p_voc_part": "á",
+		"p_voc_part_im": "l",
+		"p_voc": "",
+		"p_voc_im": "",
+		"d_voc_part": "dá",
+		"d_voc_part_im": "",
+		"d_voc": "",
+		"d_voc_im": ""
+	}
+}
+ -->
+</html>
