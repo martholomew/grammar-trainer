@@ -1,0 +1,41 @@
+{"w1": [
+  {
+    "word": "marbaid",
+    "word_more": "marbaid, w1 (3sg conj -a): he kills",
+    "forms": {
+      "s_1_abs": "marbaim",
+      "s_2_abs": "marbai",
+      "s_3_abs": "marbaid",
+      "p_1_abs": "marbmai",
+      "p_2_abs": "marbthae",
+      "p_3_abs": "marbait",
+      "s_1_conj": "marbaim",
+      "s_2_conj": "marbai",
+      "s_3_conj": "marba",
+      "p_1_conj": "marbam",
+      "p_2_conj": "marbaid",
+      "p_3_conj": "marbat"
+    }
+  }
+],
+ "w2" : [
+  {
+    "word": "léicid",
+    "word_more": "léicid, w2 (3sg conj -i): he releases",
+    "forms": {
+      "s_1_abs": "léicim",
+      "s_2_abs": "léici",
+      "s_3_abs": "léicid",
+      "p_1_abs": "léicmi",
+      "p_2_abs": "léicthe",
+      "p_3_abs": "léicit",
+      "s_1_conj": "léicim",
+      "s_2_conj": "léici",
+      "s_3_conj": "léici",
+      "p_1_conj": "léicem",
+      "p_2_conj": "léicid",
+      "p_3_conj": "léicet"
+    }
+  }
+]
+}

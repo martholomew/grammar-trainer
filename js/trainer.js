@@ -47,9 +47,26 @@ async function doFunction(url, type, first_field) {
 				document.getElementById("word").textContent = word["word_more"];
 			}
 		}
-		else if (type === "verb") {
+		else if (type === "lat_verb") {
 			let chosen_conj = [];
 			let conj_nums = ["irr", "c1", "c2", "c3", "c4"];
+			for (num of conj_nums) {
+				if (document.getElementById(num).checked) {
+					chosen_conj = chosen_conj.concat(json[num]);
+				}
+			}
+
+			let random_int = Math.floor(Math.random() * chosen_conj.length);
+			word = chosen_conj[random_int];
+			if (document.getElementById("minim").checked) {
+				document.getElementById("word").textContent = word["word"];
+			} else {
+				document.getElementById("word").textContent = word["word_more"];
+			}
+		}
+		else if (type === "sga_verb") {
+			let chosen_conj = [];
+			let conj_nums = ["w1", "w2"];
 			for (num of conj_nums) {
 				if (document.getElementById(num).checked) {
 					chosen_conj = chosen_conj.concat(json[num]);
