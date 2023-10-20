@@ -30,7 +30,6 @@ async function doFunction(url, type, first_field) {
 			}
 		}
 		else if (type === "noun_sga") {
-
 			let chosen_decl = [];
 			let decl_nums = ["o_stems", "io_stems"];
 			for (num of decl_nums) {
