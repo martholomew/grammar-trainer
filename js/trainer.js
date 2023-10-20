@@ -12,77 +12,30 @@ async function doFunction(url, type, first_field) {
 	if (next_one === 1) {
     next_one = 0;
 
-	    if (type === "noun") {
-			let chosen_decl = [];
-			let decl_nums = ["d1", "d2", "d3", "d4", "d5"];
-			for (num of decl_nums) {
-				if (document.getElementById(num).checked) {
-					chosen_decl = chosen_decl.concat(json[num]);
-				}
-			}
-
-			let random_int = Math.floor(Math.random() * chosen_decl.length);
-			word = chosen_decl[random_int];
-			if (document.getElementById("minim").checked) {
-				document.getElementById("word").textContent = word["word"];
-			} else {
-				document.getElementById("word").textContent = word["word_more"];
-			}
-		}
-		else if (type === "noun_sga") {
-			let chosen_decl = [];
-			let decl_nums = ["o_stems", "io_stems"];
-			for (num of decl_nums) {
-				if (document.getElementById(num).checked) {
-					chosen_decl = chosen_decl.concat(json[num]);
-				}
-			}
-
-			let random_int = Math.floor(Math.random() * chosen_decl.length);
-			word = chosen_decl[random_int];
-			if (document.getElementById("minim").checked) {
-				document.getElementById("word").textContent = word["word"];
-			} else {
-				document.getElementById("word").textContent = word["word_more"];
-			}
-		}
-		else if (type === "lat_verb") {
-			let chosen_conj = [];
-			let conj_nums = ["irr", "c1", "c2", "c3", "c4"];
-			for (num of conj_nums) {
-				if (document.getElementById(num).checked) {
-					chosen_conj = chosen_conj.concat(json[num]);
-				}
-			}
-
-			let random_int = Math.floor(Math.random() * chosen_conj.length);
-			word = chosen_conj[random_int];
-			if (document.getElementById("minim").checked) {
-				document.getElementById("word").textContent = word["word"];
-			} else {
-				document.getElementById("word").textContent = word["word_more"];
-			}
-		}
-		else if (type === "sga_verb") {
-			let chosen_conj = [];
-			let conj_nums = ["w1", "w2"];
-			for (num of conj_nums) {
-				if (document.getElementById(num).checked) {
-					chosen_conj = chosen_conj.concat(json[num]);
-				}
-			}
-
-			let random_int = Math.floor(Math.random() * chosen_conj.length);
-			word = chosen_conj[random_int];
-			if (document.getElementById("minim").checked) {
-				document.getElementById("word").textContent = word["word"];
-			} else {
-				document.getElementById("word").textContent = word["word_more"];
-			}
-		}
-		else if (type === "article") {
+		if (type === "article") {
 			word = json;
 			hidden_text = "hid"
+		}
+		else {
+			let chosen_conj_decl = [];
+			let conj_decl_nums = [];
+			let elements = document.getElementsByClassName("conj_decl");
+			for(let index=0; index < elements.length; index++){
+				conj_decl_nums = conj_decl_nums.concat(elements[index].id);
+			}
+			for (num of conj_decl_nums) {
+				if (document.getElementById(num).checked) {
+					chosen_conj_decl = chosen_conj_decl.concat(json[num]);
+				}
+			}
+
+			let random_int = Math.floor(Math.random() * chosen_conj_decl.length);
+			word = chosen_conj_decl[random_int];
+			if (document.getElementById("minim").checked) {
+				document.getElementById("word").textContent = word["word"];
+			} else {
+				document.getElementById("word").textContent = word["word_more"];
+			}
 		}
 
 		for (const [key, value] of Object.entries(word["forms"])) {
