@@ -59,6 +59,7 @@ async function doFunction(url, type, first_field) {
 	}
 
 	let wrong = 0;
+	document.getElementById("word").textContent = word["word_more"];
 
 	for (const [key, value] of Object.entries(word["forms"])) {
 		element = document.getElementById(key);
