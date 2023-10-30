@@ -45,7 +45,7 @@
     "forms": {
       "s_1_abs": "labrur",
       "s_2_abs": "labrither",
-      "s_3_abs": "labraithir",
+      "s_3_abs": "labrithir",
       "p_1_abs": "labrimmir",
       "p_2_abs": "labrithe",
       "p_3_abs": "labritir",
@@ -71,8 +71,8 @@
       "s_2_conj": "foilsigther",
       "s_3_conj": "foilsigedar",
       "p_1_conj": "foilsigmer",
-      "p_2_conj": "foilsigetar",
-      "p_3_conj": "foilsigter"
+      "p_2_conj": "foilsigid",
+      "p_3_conj": "foilsigetar"
     }
   }
 ]
