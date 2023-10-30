@@ -4,12 +4,12 @@ var first_field;
 var questions = 0;
 var right = 0;
 var json = {};
+var enter = 0;
 hidden_text = "hidden"
 
 function checkAnswer(element, key, value) {
 	if (element.value === value) {
 		element.style.backgroundColor = "lime";
-		focusNext();
 	} else {
 		element.style.backgroundColor = "red";
 	}
@@ -50,7 +50,8 @@ function pickWord() {
 }
 
 async function init(url, passed_type, passed_first_field) {
-	if (passed_type === "lat_noun") {
+	document.getElementById("check").addEventListener("click", function(){nextWord()});
+	if (passed_type === "lat_noun_test") {
 		const res = await fetch("https://files.catbox.moe/pi8g0m.json");
 		const orders = await res.json();
 
@@ -84,24 +85,63 @@ async function init(url, passed_type, passed_first_field) {
 }
 
 function nextWord() {
-	pickWord();
-	for (const [key, value] of Object.entries(word["forms"])) {
-		document.getElementById(key).style.backgroundColor = "white";
-		document.getElementById(key).value = "";
-
-		if (type != "noun_sga") {
-			document.getElementById(key + "_cor").innerHTML = "<i>" + hidden_text + "</i>";
+	if (enter === 0) {
+		let wrong = 0;
+		for (const [key, value] of Object.entries(word["forms"])) {
+			element = document.getElementById(key);
+			if (element.value !== value) {
+				wrong = 1;
+				element.style.backgroundColor = "red";
+			} else {
+				element.style.backgroundColor = "lime";
+			}
+			if (type != "noun_sga") {
+				document.getElementById(key + "_cor").textContent = value;
+			}
 		}
-		else {
+		if (wrong === 0) {
+				right += 1;
+		}
+		questions += 1;
+		document.getElementById("results").textContent = right + "/" + questions;
+		if (type === "noun_sga") {
 			let cases = ["nom", "acc", "gen", "dat", "voc"];
 			let numbers = ["s", "p", "d"];
-			for (a_case of cases) {
-				for (number of numbers) {
-					document.getElementById(number + "_" + a_case + "_cor").innerHTML = "<i>" + hidden_text + "</i>";
+			let answer = "";
+			let forms = word["forms"];
+				for (a_case of cases) {
+					for (number of numbers) {
+						if (number === "d" || a_case === "voc") {
+							answer = forms[number + "_" + a_case + "_part"] + "<sup>" + forms[number + "_" + a_case + "_part_im"].toUpperCase() + "</sup> " + forms[number + "_" + a_case] + "<sup>" + forms[number + "_" + a_case + "_im"].toUpperCase() + "</sup>";
+						}
+						else {
+							answer = forms[number + "_" + a_case] + "<sup>" + forms[number + "_" + a_case + "_im"].toUpperCase() + "</sup>";
+						}
+						document.getElementById(number + "_" + a_case + "_cor").innerHTML = answer;
+					}
+				}
+		}
+		enter = 1;
+	} else {
+		pickWord();
+		for (const [key, value] of Object.entries(word["forms"])) {
+			document.getElementById(key).style.backgroundColor = "white";
+			document.getElementById(key).value = "";
+
+			if (type != "noun_sga") {
+				document.getElementById(key + "_cor").innerHTML = "<i>" + hidden_text + "</i>";
+			}
+			else {
+				let cases = ["nom", "acc", "gen", "dat", "voc"];
+				let numbers = ["s", "p", "d"];
+				for (a_case of cases) {
+					for (number of numbers) {
+						document.getElementById(number + "_" + a_case + "_cor").innerHTML = "<i>" + hidden_text + "</i>";
+					}
 				}
 			}
 		}
+		document.getElementById(first_field).focus();
+		enter = 0;
 	}
-	document.getElementById(first_field).focus();
-	return 0;
 }

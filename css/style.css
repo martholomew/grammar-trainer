@@ -1,0 +1,8 @@
+body {margin-top:2.5%;font-size:150%;text-align:center;}
+input {width:7em;}
+a.answer {color: grey;padding-right:1em;}
+div.results {margin-top:1em;}
+.column {text-align:left;display:inline-block;}
+section.options {text-align:left;margin-left:20%;margin-right:20%;}
+.num {width: 1em;}
+.im {width: 1em;}

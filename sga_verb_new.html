@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Learn Latin Nouns</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/trainer_new.js"></script>
+</head>
+<body onload="init('https://martholomew.github.io/grammar-trainer/json/sga_verb.json', 'verb', 's_1_abs');">
+<main>
+	<h4 id="word"><i>[word], [conj. num.]: [def.]</i></h4>
+	<section>
+		<table class="column">
+			<tr>
+				<td></td>
+				<td></td>
+				<td>Absolute</td>
+			</tr>
+			<tr>
+				<td>
+					<a>sing.</a>
+				</td>
+				<td>
+					<label for="s_1_abs">1st</label>
+				</td>
+				<td>
+					<input type="text" id="s_1_abs" name="s_1_abs" tabindex="1" autofocus>
+				</td>
+				<td>
+					<a class="answer" id="s_1_abs_cor"><i>hidden</i></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<label for="s_2_abs">2nd</label>
+				</td>
+				<td>
+					<input type="text" id="s_2_abs" name="s_2_abs" tabindex="2">
+				</td>
+				<td>
+					<a class="answer" id="s_2_abs_cor"><i>hidden</i></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<label for="s_3_abs">3rd</label>
+				</td>
+				<td>
+					<input type="text" id="s_3_abs" name="s_3_abs" tabindex="3">
+				</td>
+				<td>
+					<a class="answer" id="s_3_abs_cor"><i>hidden</i></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a>plur.</a>
+				</td>
+				<td>
+					<label for="p_1_abs">1st</label>
+				</td>
+				<td>
+					<input type="text" id="p_1_abs" name="p_1_abs" tabindex="4">
+				</td>
+				<td>
+					<a class="answer" id="p_1_abs_cor"><i>hidden</i></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<label for="p_2_abs">2nd</label>
+				</td>
+				<td>
+					<input type="text" id="p_2_abs" name="p_2_abs" tabindex="5">
+				</td>
+				<td>
+					<a class="answer" id="p_2_abs_cor"><i>hidden</i></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<label for="p_3_abs">3rd</label>
+				</td>
+				<td>
+					<input type="text" id="p_3_abs" name="p_3_abs" tabindex="6">
+				</td>
+				<td>
+					<a class="answer" id="p_3_abs_cor"><i>hidden</i></a>
+				</td>
+			</tr>
+		</table>
+		<table class="column">
+			<tr>
+				<td></td>
+				<td></td>
+				<td>Conjunct</td>
+			</tr>
+			<tr>
+				<td>
+					<a>sing.</a>
+				</td>
+				<td>
+					<label for="s_1_conj">1st</label>
+				</td>
+				<td>
+					<input type="text" id="s_1_conj" name="s_1_conj" tabindex="7">
+				</td>
+				<td>
+					<a class="answer" id="s_1_conj_cor"><i>hidden</i></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<label for="s_2_conj">2nd</label>
+				</td>
+				<td>
+					<input type="text" id="s_2_conj" name="s_2_conj" tabindex="8">
+				</td>
+				<td>
+					<a class="answer" id="s_2_conj_cor"><i>hidden</i></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<label for="s_3_conj">3rd</label>
+				</td>
+				<td>
+					<input type="text" id="s_3_conj" name="s_3_conj" tabindex="9">
+				</td>
+				<td>
+					<a class="answer" id="s_3_conj_cor"><i>hidden</i></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a>plur.</a>
+				</td>
+				<td>
+					<label for="p_1_conj">1st</label>
+				</td>
+				<td>
+					<input type="text" id="p_1_conj" name="p_1_conj" tabindex="10">
+				</td>
+				<td>
+					<a class="answer" id="p_1_conj_cor"><i>hidden</i></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<label for="p_2_conj">2nd</label>
+				</td>
+				<td>
+					<input type="text" id="p_2_conj" name="p_2_conj" tabindex="11">
+				</td>
+				<td>
+					<a class="answer" id="p_2_conj_cor"><i>hidden</i></a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td>
+					<label for="p_3_conj">3rd</label>
+				</td>
+				<td>
+					<input type="text" id="p_3_conj" name="p_3_conj" tabindex="12">
+				</td>
+				<td>
+					<a class="answer" id="p_3_conj_cor"><i>hidden</i></a>
+				</td>
+			</tr>
+		</table>
+	</section>
+	<section class="options">
+		<button class="check" type="button" id="check">check</button>
+		<div class="results">
+			<a>Correct:</a>
+			<a id="results">0/0</a>
+		</div>
+		<hr>
+		<details>
+			<summary>Instructions</summary>
+			<ol>
+				<li>Start by pressing [ENTER]</li>
+				<li>[TAB] between the textboxes, filling them all in</li>
+				<li>Press [ENTER], wrong answers will be red, right answers will be green</li>
+				<li>Press [ENTER] again to continue to the next question</li>
+				<li>Repeat until u r a genus!</li>
+			</ol>
+		</details>
+		<details>
+			<summary>Conjugations</summary>
+				<input class="groups" type="checkbox" id="w1" name="w1" value="true" checked>
+				<label for="w1">w1</label>
+				<br>
+				<input class="groups" type="checkbox" id="w2" name="w2" value="true" checked>
+				<label for="w2">w2</label>
+				<br>
+				<input class="groups" type="checkbox" id="dep" name="dep" value="true" checked>
+				<label for="dep">dep</label>
+		</details>
+		<details>
+			<summary>Options</summary>
+				<input type="checkbox" id="minim" name="minim" value="true">
+				<label for="minim">Minimum Info</label>
+		</details>
+	</section>
+</main>
+</body>
+</html>
