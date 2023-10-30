@@ -1,0 +1,31 @@
+{
+	"lat_noun": {
+		"numbers": ["s", "p"],
+		"orders": {
+			"Traditional": [
+				"nom",
+				"gen",
+				"dat",
+				"acc",
+				"voc",
+				"abl"
+			],
+			"Wheelock": [
+				"nom",
+				"gen",
+				"dat",
+				"acc",
+				"abl",
+				"voc"
+			],
+			"British": [
+				"nom",
+				"voc",
+				"acc",
+				"gen",
+				"dat",
+				"abl"
+			]
+		}
+	}
+}

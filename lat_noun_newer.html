@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Learn Latin Nouns</title>
+	<style>
+		body {margin-top:2.5%;font-size:150%;text-align:center;}
+		input {width:7em;}
+		a.answer {color: grey;padding-right:1em;}
+		div.results {margin-top:1em;}
+		main {position:relative;}
+		.column {text-align:left;display:inline-block;}
+		section.options {text-align:left;margin-left:20%;margin-right:20%;}
+	</style>
+	<script src="js/trainer_new.js"></script>
+</head>
+<body onload="init('https://martholomew.github.io/grammar-trainer/json/lat_noun.json', 'lat_noun', 's_nom');">
+<main>
+	<h4 id="word"><i>[word], -[gen.], [decl. num. & gen.]: [def.]</i></h4>
+	<section id="section">
+	</section>
+	<template id="column">
+		<table class="column">
+		</table>
+	</template>
+	<template id="header">
+		<tr>
+			<td></td>
+			<td id="num"></td>
+		</tr>
+	</template>
+	<template id="conj_decl">
+		<tr>
+			<td>
+				<label id="label" for="">nom.</label>
+			</td>
+			<td>
+				<input id="detail" type="" name="">
+			</td>
+			<td>
+				<a id="cor" class="answer"><i>hidden</i></a>
+			</td>
+		</tr>
+	</template>
+	<section class="options">
+		<div class="results">
+			<a>Correct:</a>
+			<a id="results">0/0</a>
+		</div>
+		<hr>
+		<details>
+			<summary>Instructions</summary>
+			<ol>
+				<li>Start by pressing [ENTER]</li>
+				<li>[TAB] between the textboxes, filling them all in</li>
+				<li>Press [ENTER], wrong answers will be red, right answers will be green</li>
+				<li>Press [ENTER] again to continue to the next question</li>
+				<li>Repeat until u r a genus!</li>
+			</ol>
+		</details>
+		<details>
+			<summary>Declensions</summary>
+						<input class="groups" type="checkbox" id="d1" name="d1" value="true" checked>
+						<label for="d1">1st</label>
+						<br>
+						<input class="groups" type="checkbox" id="d2" name="d2" value="true" checked>
+						<label for="d2">2nd</label>
+						<br>
+						<input class="groups" type="checkbox" id="d3" name="d3" value="true" checked>
+						<label for="d3">3rd</label>
+						<br>
+						<input class="groups" type="checkbox" id="d4" name="d4" value="true" checked>
+						<label for="d4">4th</label>
+						<br>
+						<input class="groups" type="checkbox" id="d5" name="d5" value="true" checked>
+						<label for="d5">5th</label>
+		</details>
+		<details>
+			<summary>Options</summary>
+				<input type="checkbox" id="minim" name="minim" value="true">
+				<label for="minim">Minimum Info</label>
+		</details>
+	</section>
+</main>
+</body>
+</html>

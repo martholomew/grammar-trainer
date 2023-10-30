@@ -18,7 +18,7 @@
     }
   }
 ],
- "w2" : [
+"w2" : [
   {
     "word": "léicid",
     "word_more": "léicid, w2 (3sg conj -i): he releases",
@@ -35,6 +35,44 @@
       "p_1_conj": "léicem",
       "p_2_conj": "léicid",
       "p_3_conj": "léicet"
+    }
+  }
+],
+"dep" : [
+  {
+    "word": "labraithir",
+    "word_more": "labraithir, dep (final -r): he speaks",
+    "forms": {
+      "s_1_abs": "labrur",
+      "s_2_abs": "labrither",
+      "s_3_abs": "labraithir",
+      "p_1_abs": "labrimmir",
+      "p_2_abs": "labrithe",
+      "p_3_abs": "labritir",
+      "s_1_conj": "labrur",
+      "s_2_conj": "labrither",
+      "s_3_conj": "labrathar",
+      "p_1_conj": "labrammar",
+      "p_2_conj": "labraid",
+      "p_3_conj": "labratar"
+    }
+  },
+  {
+    "word": "foilsigidir",
+    "word_more": "foilsigidir, dep (final -r): he reveals",
+    "forms": {
+      "s_1_abs": "foilsigim",
+      "s_2_abs": "foilsigther",
+      "s_3_abs": "foilsigidir",
+      "p_1_abs": "foilsigmir",
+      "p_2_abs": "foilsigthe",
+      "p_3_abs": "foilsigitir",
+      "s_1_conj": "foilsigur",
+      "s_2_conj": "foilsigther",
+      "s_3_conj": "foilsigedar",
+      "p_1_conj": "foilsigmer",
+      "p_2_conj": "foilsigetar",
+      "p_3_conj": "foilsigter"
     }
   }
 ]
