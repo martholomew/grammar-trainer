@@ -1,8 +1,9 @@
 {
 	"lat_noun": {
 		"numbers": ["s", "p"],
+		"default": "ucc",
 		"orders": {
-			"Traditional": [
+			"trad": [
 				"nom",
 				"gen",
 				"dat",
@@ -10,7 +11,7 @@
 				"voc",
 				"abl"
 			],
-			"Wheelock": [
+			"wheel": [
 				"nom",
 				"gen",
 				"dat",
@@ -18,13 +19,21 @@
 				"abl",
 				"voc"
 			],
-			"British": [
+			"brit": [
 				"nom",
 				"voc",
 				"acc",
 				"gen",
 				"dat",
 				"abl"
+			],
+			"ucc": [
+				"nom",
+				"acc",
+				"gen",
+				"dat",
+				"abl",
+				"voc"
 			]
 		}
 	}

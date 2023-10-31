@@ -5,13 +5,26 @@ var questions = 0;
 var right = 0;
 var json = {};
 var enter = 0;
+var element_list = [];
+var numbers = [];
+var orders = [];
 hidden_text = "hidden"
 
 function checkAnswer(element, key, value) {
-	if (element.value === value) {
-		element.style.backgroundColor = "lime";
+	if (document.getElementById("imm").checked) {
+		if (element.value === value) {
+			element.style.backgroundColor = "lime";
+			let index = element_list.indexOf(key);
+			if (index + 1 < element_list.length) {
+				document.getElementById(element_list[index + 1]).focus();
+			} else {
+				document.getElementById("check").focus();
+			}
+		} else {
+			element.style.backgroundColor = "red";
+		}
 	} else {
-		element.style.backgroundColor = "red";
+		element.style.backgroundColor = "white";
 	}
 }
 
@@ -43,51 +56,64 @@ function pickWord() {
 		}
 	}
 
-	for (const [key, value] of Object.entries(word["forms"])) {
+	for (let [key, value] of Object.entries(word["forms"])) {
 		let element = document.getElementById(key);
 		element.addEventListener("keyup", function(){checkAnswer(element, key, value)});
 	}
 }
 
-async function init(url, passed_type, passed_first_field) {
+async function init(url, passed_type) {
 	document.getElementById("check").addEventListener("click", function(){nextWord()});
-	if (passed_type === "lat_noun_test") {
-		const res = await fetch("https://files.catbox.moe/pi8g0m.json");
-		const orders = await res.json();
+	if (passed_type === "lat_noun") {
+		const res = await fetch("https://files.catbox.moe/fyzwd4.json");
+		const json = await res.json();
 
-		const section = document.getElementById("section");
-		const column = document.getElementById("column");
-		const header = document.getElementById("header");
-		const conj_decl = document.getElementById("conj_decl");
-		for (const number of orders["lat_noun"]["numbers"]) {
-			let column_clone = column.content.cloneNode(true);
-			first = 1;
-			for (const form of orders["lat_noun"]["orders"]["Traditional"]) {
-				if (first === 1) {
-					let header_clone = header.content.cloneNode(true);
-					column_clone.appendChild(header_clone)
-					first = 0;
-				}
-				console.log(number, form);
-				let conj_decl_clone = conj_decl.content.cloneNode(true);
-				column_clone.appendChild(conj_decl_clone);
+		let lang_info = json[passed_type];
+		numbers = lang_info["numbers"];
+		orders = lang_info["orders"];
+		let default_order = lang_info["default"];
+		console.log(default_order);
+		for (let number of numbers) {
+			for (let value of orders[default_order]) {
+				element_list.push(number + "_" + value);
 			}
-			section.appendChild(column);
 		}
 	}
+
+	let radios = document.getElementsByName("order");
+	for (let radio of radios) {
+		radio.addEventListener("change", function(){changeOrder(radio.id)});
+	}
+
 	if (Object.keys(json).length === 0) {
 		const res = await fetch(url);
 		json = await res.json();
 	}
 	type = passed_type;
-	first_field = passed_first_field;
+	first_field = element_list[0];
 	pickWord();
+}
+
+function changeOrder(order) {
+	console.log(order);
+	element_list = [];
+	for (let number of numbers) {
+		let previous_element = document.getElementById(number + "_header_row");
+		for (let value of orders[order]) {
+			let current_element_name = number + "_" + value + "_row";
+			element_list.push(number + "_" + value);
+			let element = document.getElementById(current_element_name);
+			previous_element.insertAdjacentElement("afterend", element);
+			previous_element = element;
+		}
+	}
 }
 
 function nextWord() {
 	if (enter === 0) {
+		document.getElementById("check").textContent = "Next";
 		let wrong = 0;
-		for (const [key, value] of Object.entries(word["forms"])) {
+		for (let [key, value] of Object.entries(word["forms"])) {
 			element = document.getElementById(key);
 			if (element.value !== value) {
 				wrong = 1;
@@ -123,8 +149,9 @@ function nextWord() {
 		}
 		enter = 1;
 	} else {
+		document.getElementById("check").textContent = "Reveal";
 		pickWord();
-		for (const [key, value] of Object.entries(word["forms"])) {
+		for (let [key, value] of Object.entries(word["forms"])) {
 			document.getElementById(key).style.backgroundColor = "white";
 			document.getElementById(key).value = "";
 

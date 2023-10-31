@@ -6,27 +6,27 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="js/trainer_new.js"></script>
 </head>
-<body onload="init('https://martholomew.github.io/grammar-trainer/json/lat_noun.json', 'noun', 's_nom');">
+<body onload="init('https://martholomew.github.io/grammar-trainer/json/lat_noun.json', 'lat_noun');">
 <main>
 	<h4 id="word"><i>[word], -[gen.], [decl. num. & gen.]: [def.]</i></h4>
 	<section>
 		<table class="column">
-			<tr>
+			<tr id="s_header_row">
 				<td></td>
 				<td>sing.</td>
 			</tr>
-			<tr>
+			<tr id="s_nom_row">
 				<td>
 					<label for="s_nom">nom.</label>
 				</td>
 				<td>
-					<input type="text" id="s_nom" name="s_nom" autofocus>
+					<input type="text" id="s_nom" name="s_nom">
 				</td>
 				<td>
 					<a class="answer" id="s_nom_cor"><i>hidden</i></a>
 				</td>
 			</tr>
-			<tr>
+			<tr id="s_acc_row">
 				<td>
 					<label for="s_acc">acc.</label>
 				</td>
@@ -37,7 +37,7 @@
 					<a class="answer" id="s_acc_cor"><i>hidden</i></a>
 				</td>
 			</tr>
-			<tr>
+			<tr id="s_gen_row">
 				<td>
 					<label for="s_gen">gen.</label>
 				</td>
@@ -48,7 +48,7 @@
 					<a class="answer" id="s_gen_cor"><i>hidden</i></a>
 				</td>
 			</tr>
-			<tr>
+			<tr id="s_dat_row">
 				<td>
 					<label for="s_dat">dat.</label>
 				</td>
@@ -59,7 +59,7 @@
 					<a class="answer" id="s_dat_cor"><i>hidden</i></a>
 				</td>
 			</tr>
-			<tr>
+			<tr id="s_abl_row">
 				<td>
 					<label for="s_abl">abl.</label>
 				</td>
@@ -70,7 +70,7 @@
 					<a class="answer" id="s_abl_cor"><i>hidden</i></a>
 				</td>
 			</tr>
-			<tr>
+			<tr id="s_voc_row">
 				<td>
 					<label for="s_voc">voc.</label>
 				</td>
@@ -83,11 +83,11 @@
 			</tr>
 		</table>
 		<table class="column">
-			<tr>
+			<tr id="p_header_row">
 				<td></td>
 				<td>plur.</td>
 			</tr>
-			<tr>
+			<tr id="p_nom_row">
 				<td>
 					<label for="p_nom">nom.</label>
 				</td>
@@ -98,7 +98,7 @@
 					<a class="answer" id="p_nom_cor"><i>hidden</i></a>
 				</td>
 			</tr>
-			<tr>
+			<tr id="p_acc_row">
 				<td>
 					<label for="p_acc">acc.</label>
 				</td>
@@ -109,7 +109,7 @@
 					<a class="answer" id="p_acc_cor"><i>hidden</i></a>
 				</td>
 			</tr>
-			<tr>
+			<tr id="p_gen_row">
 				<td>
 					<label for="p_gen">gen.</label>
 				</td>
@@ -120,7 +120,7 @@
 					<a class="answer" id="p_gen_cor"><i>hidden</i></a>
 				</td>
 			</tr>
-			<tr>
+			<tr id="p_dat_row">
 				<td>
 					<label for="p_dat">dat.</label>
 				</td>
@@ -131,7 +131,7 @@
 					<a class="answer" id="p_dat_cor"><i>hidden</i></a>
 				</td>
 			</tr>
-			<tr>
+			<tr id="p_abl_row">
 				<td>
 					<label for="p_abl">abl.</label>
 				</td>
@@ -142,7 +142,7 @@
 					<a class="answer" id="p_abl_cor"><i>hidden</i></a>
 				</td>
 			</tr>
-			<tr>
+			<tr id="p_voc_row">
 				<td>
 					<label for="p_voc">voc.</label>
 				</td>
@@ -156,23 +156,13 @@
 		</table>
 	</section>
 	<section class="options">
-		<button class="check" type="button" id="check">check</button>
+		<button class="check" type="button" id="check">Reveal</button>
 		<div class="results">
 			<a>Correct:</a>
 			<a id="results">0/0</a>
 		</div>
 		<hr>
-		<details>
-			<summary>Instructions</summary>
-			<ol>
-				<li>Start by pressing [ENTER]</li>
-				<li>[TAB] between the textboxes, filling them all in</li>
-				<li>Press [ENTER], wrong answers will be red, right answers will be green</li>
-				<li>Press [ENTER] again to continue to the next question</li>
-				<li>Repeat until u r a genus!</li>
-			</ol>
-		</details>
-		<details>
+		<details open>
 			<summary>Declensions</summary>
 				<input class="groups" type="checkbox" id="d1" name="d1" value="true" checked>
 				<label for="d1">1st</label>
@@ -190,9 +180,26 @@
 				<label for="d5">5th</label>
 		</details>
 		<details>
+			<summary>Order</summary>
+				<input type="radio" id="ucc" name="order" value="ucc" checked>
+				<label for="ucc">UCC Teacher (default)</label>
+				<br>
+				<input type="radio" id="trad" name="order" value="trad">
+				<label for="trad">Traditional</label>
+				<br>
+				<input type="radio" id="wheel" name="order" value="wheel">
+				<label for="wheel">Wheelock</label>
+				<br>
+				<input type="radio" id="brit" name="order" value="brit">
+				<label for="brit">British</label>
+		</details>
+		<details>
 			<summary>Options</summary>
 				<input type="checkbox" id="minim" name="minim" value="true">
 				<label for="minim">Minimum Info</label>
+				<br>
+				<input type="checkbox" id="imm" name="imm" value="true" checked>
+				<label for="imm">Immediate Feedback</label>
 		</details>
 	</section>
 </main>
