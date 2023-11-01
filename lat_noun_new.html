@@ -3,12 +3,21 @@
 <head>
 	<meta charset="utf-8">
 	<title>Learn Latin Nouns</title>
-	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body {margin-top:2.5%;font-size:150%;text-align:center;}
+		input {width:7em;}
+		a.answer {color: grey;padding-right:1em;}
+		div.results {margin-top:1em;}
+		.column {text-align:left;display:inline-block;}
+		section.options {text-align:left;margin-left:20%;margin-right:20%;}
+		.num {width: 1em;}
+		.im {width: 1em;}
+	</style>
 	<script src="js/trainer_new.js"></script>
 </head>
 <body onload="init('https://martholomew.github.io/grammar-trainer/json/lat_noun.json', 'lat_noun');">
 <main>
-	<h4 id="word"><i>[word], -[gen.], [decl. num. & gen.]: [def.]</i></h4>
+	<h4 id="word"><i>word</i></h4>
 	<section>
 		<table class="column">
 			<tr id="s_header_row">
@@ -162,7 +171,7 @@
 			<a id="results">0/0</a>
 		</div>
 		<hr>
-		<details open>
+		<details>
 			<summary>Declensions</summary>
 				<input class="groups" type="checkbox" id="d1" name="d1" value="true" checked>
 				<label for="d1">1st</label>

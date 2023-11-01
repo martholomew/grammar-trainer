@@ -13,7 +13,7 @@ hidden_text = "hidden"
 function checkAnswer(element, key, value) {
 	if (document.getElementById("imm").checked) {
 		if (element.value === value) {
-			element.style.backgroundColor = "lime";
+			element.style.backgroundColor = "#CBFFA9";
 			let index = element_list.indexOf(key);
 			if (index + 1 < element_list.length) {
 				document.getElementById(element_list[index + 1]).focus();
@@ -21,7 +21,7 @@ function checkAnswer(element, key, value) {
 				document.getElementById("check").focus();
 			}
 		} else {
-			element.style.backgroundColor = "red";
+			element.style.backgroundColor = "#FF9B9B";
 		}
 	} else {
 		element.style.backgroundColor = "white";
@@ -64,19 +64,16 @@ function pickWord() {
 
 async function init(url, passed_type) {
 	document.getElementById("check").addEventListener("click", function(){nextWord()});
-	if (passed_type === "lat_noun") {
-		const res = await fetch("https://files.catbox.moe/fyzwd4.json");
-		const json = await res.json();
+	const res = await fetch("https://martholomew.github.io/grammar-trainer/json/lang_info.json");
+	const lang_json = await res.json();
 
-		let lang_info = json[passed_type];
-		numbers = lang_info["numbers"];
-		orders = lang_info["orders"];
-		let default_order = lang_info["default"];
-		console.log(default_order);
-		for (let number of numbers) {
-			for (let value of orders[default_order]) {
-				element_list.push(number + "_" + value);
-			}
+	let lang_info = lang_json[passed_type];
+	numbers = lang_info["numbers"];
+	orders = lang_info["orders"];
+	let default_order = lang_info["default"];
+	for (let number of numbers) {
+		for (let value of orders[default_order]) {
+			element_list.push(number + "_" + value);
 		}
 	}
 
@@ -95,7 +92,6 @@ async function init(url, passed_type) {
 }
 
 function changeOrder(order) {
-	console.log(order);
 	element_list = [];
 	for (let number of numbers) {
 		let previous_element = document.getElementById(number + "_header_row");
@@ -117,9 +113,9 @@ function nextWord() {
 			element = document.getElementById(key);
 			if (element.value !== value) {
 				wrong = 1;
-				element.style.backgroundColor = "red";
+				element.style.backgroundColor = "#FF9B9B";
 			} else {
-				element.style.backgroundColor = "lime";
+				element.style.backgroundColor = "#CBFFA9";
 			}
 			if (type != "noun_sga") {
 				document.getElementById(key + "_cor").textContent = value;

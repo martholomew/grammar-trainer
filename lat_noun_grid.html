@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Learn Latin Nouns</title>
+	<style>
+		body {
+			font-size: 150%;
+		}
+		.word {
+			text-align: center;
+			margin-bottom: 0;
+		}
+		.options {
+			width: 70%;
+			margin: auto;
+		}
+		.table {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			place-items: start center;
+			margin-left: 20%;
+			margin-right: 20%;
+		}
+		.column {
+			display: grid;
+			grid-template-rows: repeat(auto-fit, auto); 
+			margin-top: 1.25em;
+		}
+		.row {
+			display: grid;
+			grid-template-columns: 3em 5em auto;
+			grid-column-gap: 1em;
+		}
+		.cell {
+			align-self: end;
+			width: 100%;
+		}
+		input[type=text] {
+			display: block;
+			width: 100%;
+			border: 0;
+			border-bottom: 1px solid #eee;
+			padding: .25em;
+			outline: none;
+			font-size: 100%;
+		}
+		input[type=text]:hover {
+			border-bottom: 1px solid grey;
+		}
+		.answer {
+			color: grey
+		}
+		.table-options {
+			margin-left: 20%;
+			margin-right: 20%;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			place-items: start center;
+			row-gap: 1em;
+		}
+		.column-options {
+			display: grid;
+			grid-template-rows: repeat(auto-fill, auto); 
+		}
+		.row-options {
+			display: grid;
+			grid-template-columns: .2fr 1fr;
+			place-items: end start;
+		}
+		.check {
+			display: block;
+			margin: auto;
+			width: auto;
+		    padding: 5px;
+		    font-size: 16px;
+		    cursor: pointer;
+		    border: 1px solid black;
+		    background: white;
+		    color: black;
+		    margin-top: .5em;
+		    margin-bottom: .5em;
+		}
+		.check:hover {
+			background: whitesmoke;
+		}
+		.results {
+			text-align: right;
+		}
+		input[type=checkbox], input[type=radio]{
+			transform: scale(1.25);
+			vertical-align: middle;
+		}
+		@media only screen and (max-width: 1080px) {
+			body {
+				font-size: 125%;
+			}
+			.table {
+				margin-left: 0%;
+				margin-right: 0%;
+				/*place-items: start start;*/
+			}
+			.options {
+				width: 100%;
+			}
+			.table-options {
+				place-items: start start;
+				margin-left: 0%;
+				margin-right: 0%;
+			}
+		}
+	</style>
+	<script src="js/trainer_new.js"></script>
+</head>
+<body onload="init('https://martholomew.github.io/grammar-trainer/json/lat_noun.json', 'lat_noun');">
+<main>
+	<h4 id="word" class="word"><i>word</i></h4>
+	<section class="table">
+		<div class="column">
+			<div id="s_header_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">singular</div>
+			</div>
+			<div id="s_nom_row" class="row">
+				<div class="cell">
+					<label for="s_nom">nom.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_nom" name="s_nom">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_nom_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="s_acc_row" class="row">
+				<div class="cell">
+					<label for="s_acc">acc.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_acc" name="s_acc">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_acc_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="s_gen_row" class="row">
+				<div class="cell">
+					<label for="s_gen">gen.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_gen" name="s_gen">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_gen_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="s_dat_row" class="row">
+				<div class="cell">
+					<label for="s_dat">dat.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_dat" name="s_dat">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_dat_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="s_abl_row" class="row">
+				<div class="cell">
+					<label for="s_abl">abl.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_abl" name="s_abl">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_abl_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="s_voc_row" class="row">
+				<div class="cell">
+					<label for="s_voc">voc.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_voc" name="s_voc">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_voc_cor"><i>hidden</i></a>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div id="p_header_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">plural</div>
+			</div>
+			<div id="p_nom_row" class="row">
+				<div class="cell">
+					<label for="p_nom">nom.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_nom" name="p_nom">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_nom_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="p_acc_row" class="row">
+				<div class="cell">
+					<label for="p_acc">acc.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_acc" name="p_acc">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_acc_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="p_gen_row" class="row">
+				<div class="cell">
+					<label for="p_gen">gen.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_gen" name="p_gen">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_gen_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="p_dat_row" class="row">
+				<div class="cell">
+					<label for="p_dat">dat.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_dat" name="p_dat">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_dat_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="p_abl_row" class="row">
+				<div class="cell">
+					<label for="p_abl">abl.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_abl" name="p_abl">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_abl_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="p_voc_row" class="row">
+				<div class="cell">
+					<label for="p_voc">voc.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_voc" name="p_voc">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_voc_cor"><i>hidden</i></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="options">
+		<button class="check" type="button" id="check">Reveal</button>
+		<div class="results">
+			<a>Correct:</a>
+			<a id="results">0/0</a>
+		</div>
+		<hr>
+	</section>
+	<section class="table-options">
+		<div class="column-options">
+			<div class="row-options">
+				<div class="cell-options">
+					<a>Declensions</a>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input class="groups" type="checkbox" id="d1" name="d1" value="true" checked>
+				</div>
+				<div class="cell-options">
+					<label for="d1">1st</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input class="groups" type="checkbox" id="d2" name="d2" value="true" checked>
+				</div>
+				<div class="cell-options">
+					<label for="d2">2nd</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input class="groups" type="checkbox" id="d3" name="d3" value="true" checked>
+				</div>
+				<div class="cell-options">
+					<label for="d3">3rd</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input class="groups" type="checkbox" id="d4" name="d4" value="true" checked>
+				</div>
+				<div class="cell-options">
+					<label for="d4">4th</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input class="groups" type="checkbox" id="d5" name="d5" value="true" checked>
+				</div>
+				<div class="cell-options">
+					<label for="d5">5th</label>
+				</div>
+			</div>
+		</div>
+		<div class="column-options">
+			<div class="row-options">
+				<div class="cell-options">
+					<a>Order</a>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="radio" id="ucc" name="order" value="ucc" class="checks" checked>
+				</div>
+				<div class="cell-options">
+					<label for="ucc">UCC Teacher (default)</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="radio" id="trad" name="order" value="trad" class="checks">
+				</div>
+				<div class="cell-options">
+					<label for="trad">Traditional</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="radio" id="wheel" name="order" value="wheel" class="checks">
+				</div>
+				<div class="cell-options">
+					<label for="wheel">Wheelock</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="radio" id="brit" name="order" value="brit" class="checks">
+				</div>
+				<div class="cell-options">
+					<label for="brit">British</label>
+				</div>
+			</div>
+		</div>
+		<div class="column-options">
+			<div class="row-options">
+				<div class="cell-options">
+					<a>Options</a>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="checkbox" id="minim" name="minim" value="true" class="checks">
+				</div>
+				<div class="cell-options">
+					<label for="minim">Minimum Info</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="checkbox" id="imm" name="imm" value="true" class="checks" checked>
+				</div>
+				<div class="cell-options">
+					<label for="imm">Immediate Feedback</label>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+</body>
+</html>
