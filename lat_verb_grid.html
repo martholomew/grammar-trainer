@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Learn Latin Verbs</title>
+	<link rel="stylesheet" href="css/style_new.css">
+	<style>
+		.row {
+			grid-template-columns: 1em 2em 5em auto;
+		}
+		@media only screen and (max-width: 330px) {
+			.table {
+				place-items: start start;
+			}
+		}
+	</style>
+	<script src="js/trainer_new.js"></script>
+</head>
+<body onload="init('https://martholomew.github.io/grammar-trainer/json/lat_verb.json', 'lat_verb');">
+<main>
+	<h4 id="word" class="word"><i>word is loading...</i></h4>
+	<section class="table">
+		<div class="column">
+			<div id="s_1_row" class="row">
+				<div class="cell">s.</div>
+				<div class="cell">
+					<label for="s_1">1st</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_1" name="s_1">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_1_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="s_2_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">
+					<label for="s_2">2nd</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_2" name="s_2">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_2_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="s_3_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">
+					<label for="s_3">3rd</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_3" name="s_3">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_3_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="p_1_row" class="row">
+				<div class="cell">p.</div>
+				<div class="cell">
+					<label for="p_1">1st</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_1" name="p_1">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_1_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="p_2_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">
+					<label for="p_2">2nd</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_2" name="p_2">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_2_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="p_3_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">
+					<label for="p_3">3rd</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_3" name="p_3">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_3_cor"><i>hidden</i></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="options">
+		<button class="check" type="button" id="check">Reveal</button>
+		<div class="results">
+			<a>Correct:</a>
+			<a id="results">0/0</a>
+		</div>
+		<hr>
+	</section>
+	<section class="table-options">
+		<div class="column-options">
+			<div class="row-options">
+				<div class="cell-options">
+					<a class="header-options">Declensions</a>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input class="groups" type="checkbox" id="c1" name="c1" value="true" checked>
+				</div>
+				<div class="cell-options">
+					<label for="c1">1st</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input class="groups" type="checkbox" id="c2" name="c2" value="true" checked>
+				</div>
+				<div class="cell-options">
+					<label for="c2">2nd</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input class="groups" type="checkbox" id="c3" name="c3" value="true" checked>
+				</div>
+				<div class="cell-options">
+					<label for="c3">3rd</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input class="groups" type="checkbox" id="c4" name="c4" value="true" checked>
+				</div>
+				<div class="cell-options">
+					<label for="c4">4th</label>
+				</div>
+			</div>
+		</div>
+		<div class="column-options">
+			<div class="row-options">
+				<div class="cell-options">
+					<a class="header-options">Options</a>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="checkbox" id="minim" name="minim" value="true" class="checks">
+				</div>
+				<div class="cell-options">
+					<label for="minim">Minimum Info</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="checkbox" id="imm" name="imm" value="true" class="checks" checked>
+				</div>
+				<div class="cell-options">
+					<label for="imm">Immediate Feedback</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="checkbox" id="next" name="next" value="true" class="checks" checked>
+				</div>
+				<div class="cell-options">
+					<label for="next">Straight to Next</label>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+</body>
+</html>

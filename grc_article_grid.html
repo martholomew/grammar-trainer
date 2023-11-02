@@ -3,25 +3,48 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<title>Learn Latin Nouns</title>
+	<title>Learn Old Irish Nouns</title>
 	<link rel="stylesheet" href="css/style_new.css">
+	<style>
+		.table {
+			grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+			margin-left: 0%;
+			margin-right: 0%;
+		}
+		.row {
+			grid-template-columns: 2em 1em 1em 5em 1em auto;
+		}
+		@media only screen and (max-width: 450px) {
+			.table {
+				place-items: start start;
+			}
+		}
+	</style>
 	<script src="js/trainer_new.js"></script>
 </head>
-<body onload="init('https://martholomew.github.io/grammar-trainer/json/lat_noun.json', 'lat_noun');">
+<body onload="init('https://martholomew.github.io/grammar-trainer/json/sga_noun.json', 'sga_noun');">
 <main>
 	<h4 id="word" class="word"><i>word is loading...</i></h4>
 	<section class="table">
 		<div class="column">
 			<div id="s_header_row" class="row">
 				<div class="cell"></div>
+				<div class="cell">pt.</div>
+				<div class="cell">IM</div>
 				<div class="cell">singular</div>
+				<div class="cell">IM</div>
 			</div>
 			<div id="s_nom_row" class="row">
 				<div class="cell">
 					<label for="s_nom">nom.</label>
 				</div>
+				<div class="cell"></div>
+				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="s_nom" name="s_nom">
+				</div>
+				<div class="cell">
+					<input type="text" id="s_nom_im" name="s_nom_im">
 				</div>
 				<div class="cell">
 					<a class="answer" id="s_nom_cor"><i>hidden</i></a>
@@ -31,8 +54,13 @@
 				<div class="cell">
 					<label for="s_acc">acc.</label>
 				</div>
+				<div class="cell"></div>
+				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="s_acc" name="s_acc">
+				</div>
+				<div class="cell">
+					<input type="text" id="s_acc_im" name="s_acc_im">
 				</div>
 				<div class="cell">
 					<a class="answer" id="s_acc_cor"><i>hidden</i></a>
@@ -42,8 +70,13 @@
 				<div class="cell">
 					<label for="s_gen">gen.</label>
 				</div>
+				<div class="cell"></div>
+				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="s_gen" name="s_gen">
+				</div>
+				<div class="cell">
+					<input type="text" id="s_gen_im" name="s_gen_im">
 				</div>
 				<div class="cell">
 					<a class="answer" id="s_gen_cor"><i>hidden</i></a>
@@ -53,22 +86,16 @@
 				<div class="cell">
 					<label for="s_dat">dat.</label>
 				</div>
+				<div class="cell"></div>
+				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="s_dat" name="s_dat">
 				</div>
 				<div class="cell">
+					<input type="text" id="s_dat_im" name="s_nom_im">
+				</div>
+				<div class="cell">
 					<a class="answer" id="s_dat_cor"><i>hidden</i></a>
-				</div>
-			</div>
-			<div id="s_abl_row" class="row">
-				<div class="cell">
-					<label for="s_abl">abl.</label>
-				</div>
-				<div class="cell">
-					<input type="text" id="s_abl" name="s_abl">
-				</div>
-				<div class="cell">
-					<a class="answer" id="s_abl_cor"><i>hidden</i></a>
 				</div>
 			</div>
 			<div id="s_voc_row" class="row">
@@ -76,7 +103,16 @@
 					<label for="s_voc">voc.</label>
 				</div>
 				<div class="cell">
+					<input type="text" id="s_voc_part" name="s_voc_part">
+				</div>
+				<div class="cell">
+					<input type="text" id="s_voc_part_im" name="s_voc_part_im">
+				</div>
+				<div class="cell">
 					<input type="text" id="s_voc" name="s_voc">
+				</div>
+				<div class="cell">
+					<input type="text" id="s_voc_im" name="s_voc_im">
 				</div>
 				<div class="cell">
 					<a class="answer" id="s_voc_cor"><i>hidden</i></a>
@@ -86,14 +122,22 @@
 		<div class="column">
 			<div id="p_header_row" class="row">
 				<div class="cell"></div>
+				<div class="cell">pt.</div>
+				<div class="cell">IM</div>
 				<div class="cell">plural</div>
+				<div class="cell">IM</div>
 			</div>
 			<div id="p_nom_row" class="row">
 				<div class="cell">
 					<label for="p_nom">nom.</label>
 				</div>
+				<div class="cell"></div>
+				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="p_nom" name="p_nom">
+				</div>
+				<div class="cell">
+					<input type="text" id="p_nom_im" name="p_nom_im">
 				</div>
 				<div class="cell">
 					<a class="answer" id="p_nom_cor"><i>hidden</i></a>
@@ -103,8 +147,13 @@
 				<div class="cell">
 					<label for="p_acc">acc.</label>
 				</div>
+				<div class="cell"></div>
+				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="p_acc" name="p_acc">
+				</div>
+				<div class="cell">
+					<input type="text" id="p_acc_im" name="p_acc_im">
 				</div>
 				<div class="cell">
 					<a class="answer" id="p_acc_cor"><i>hidden</i></a>
@@ -114,8 +163,13 @@
 				<div class="cell">
 					<label for="p_gen">gen.</label>
 				</div>
+				<div class="cell"></div>
+				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="p_gen" name="p_gen">
+				</div>
+				<div class="cell">
+					<input type="text" id="p_gen_im" name="p_gen_im">
 				</div>
 				<div class="cell">
 					<a class="answer" id="p_gen_cor"><i>hidden</i></a>
@@ -125,22 +179,16 @@
 				<div class="cell">
 					<label for="p_dat">dat.</label>
 				</div>
+				<div class="cell"></div>
+				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="p_dat" name="p_dat">
 				</div>
 				<div class="cell">
+					<input type="text" id="p_dat_im" name="p_nom_im">
+				</div>
+				<div class="cell">
 					<a class="answer" id="p_dat_cor"><i>hidden</i></a>
-				</div>
-			</div>
-			<div id="p_abl_row" class="row">
-				<div class="cell">
-					<label for="p_abl">abl.</label>
-				</div>
-				<div class="cell">
-					<input type="text" id="p_abl" name="p_abl">
-				</div>
-				<div class="cell">
-					<a class="answer" id="p_abl_cor"><i>hidden</i></a>
 				</div>
 			</div>
 			<div id="p_voc_row" class="row">
@@ -148,10 +196,108 @@
 					<label for="p_voc">voc.</label>
 				</div>
 				<div class="cell">
+					<input type="text" id="p_voc_part" name="p_voc_part">
+				</div>
+				<div class="cell">
+					<input type="text" id="p_voc_part_im" name="p_voc_part_im">
+				</div>
+				<div class="cell">
 					<input type="text" id="p_voc" name="p_voc">
 				</div>
 				<div class="cell">
+					<input type="text" id="p_voc_im" name="p_voc_im">
+				</div>
+				<div class="cell">
 					<a class="answer" id="p_voc_cor"><i>hidden</i></a>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div id="d_header_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">pt.</div>
+				<div class="cell">IM</div>
+				<div class="cell">dual</div>
+				<div class="cell">IM</div>
+			</div>
+			<div id="d_nom_row" class="row">
+				<div class="cell">
+					<label for="d_nom">nom.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="d_nom_part" name="d_nom_part">
+				</div>
+				<div class="cell">
+					<input type="text" id="d_nom_part_im" name="d_nom_part_im">
+				</div>
+				<div class="cell">
+					<input type="text" id="d_nom" name="d_nom">
+				</div>
+				<div class="cell">
+					<input type="text" id="d_nom_im" name="d_nom_im">
+				</div>
+				<div class="cell">
+					<a class="answer" id="d_nom_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="d_acc_row" class="row">
+				<div class="cell">
+					<label for="d_acc">acc.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="d_acc_part" name="d_acc_part">
+				</div>
+				<div class="cell">
+					<input type="text" id="d_acc_part_im" name="d_acc_part_im">
+				</div>
+				<div class="cell">
+					<input type="text" id="d_acc" name="d_acc">
+				</div>
+				<div class="cell">
+					<input type="text" id="d_acc_im" name="d_acc_im">
+				</div>
+				<div class="cell">
+					<a class="answer" id="d_acc_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="d_gen_row" class="row">
+				<div class="cell">
+					<label for="d_gen">gen.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="d_gen_part" name="d_gen_part">
+				</div>
+				<div class="cell">
+					<input type="text" id="d_gen_part_im" name="d_gen_part_im">
+				</div>
+				<div class="cell">
+					<input type="text" id="d_gen" name="d_gen">
+				</div>
+				<div class="cell">
+					<input type="text" id="d_gen_im" name="d_gen_im">
+				</div>
+				<div class="cell">
+					<a class="answer" id="d_gen_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="d_dat_row" class="row">
+				<div class="cell">
+					<label for="d_dat">dat.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="d_dat_part" name="d_dat_part">
+				</div>
+				<div class="cell">
+					<input type="text" id="d_dat_part_im" name="d_dat_part_im">
+				</div>
+				<div class="cell">
+					<input type="text" id="d_dat" name="d_dat">
+				</div>
+				<div class="cell">
+					<input type="text" id="d_dat_im" name="d_nom_im">
+				</div>
+				<div class="cell">
+					<a class="answer" id="d_dat_cor"><i>hidden</i></a>
 				</div>
 			</div>
 		</div>
@@ -173,42 +319,18 @@
 			</div>
 			<div class="row-options">
 				<div class="cell-options">
-					<input class="groups" type="checkbox" id="d1" name="d1" value="true" checked>
+					<input class="groups" type="checkbox" id="o_stems" name="o_stems" value="true" checked>
 				</div>
 				<div class="cell-options">
-					<label for="d1">1st</label>
-				</div>
-			</div>
-			<div class="row-options">
-				<div class="cell-options">
-					<input class="groups" type="checkbox" id="d2" name="d2" value="true" checked>
-				</div>
-				<div class="cell-options">
-					<label for="d2">2nd</label>
+					<label for="o_stems">-o Stems</label>
 				</div>
 			</div>
 			<div class="row-options">
 				<div class="cell-options">
-					<input class="groups" type="checkbox" id="d3" name="d3" value="true" checked>
+					<input class="groups" type="checkbox" id="io_stems" name="io_stems" value="true" checked>
 				</div>
 				<div class="cell-options">
-					<label for="d3">3rd</label>
-				</div>
-			</div>
-			<div class="row-options">
-				<div class="cell-options">
-					<input class="groups" type="checkbox" id="d4" name="d4" value="true" checked>
-				</div>
-				<div class="cell-options">
-					<label for="d4">4th</label>
-				</div>
-			</div>
-			<div class="row-options">
-				<div class="cell-options">
-					<input class="groups" type="checkbox" id="d5" name="d5" value="true" checked>
-				</div>
-				<div class="cell-options">
-					<label for="d5">5th</label>
+					<label for="io_stems">-i̯o Stems</label>
 				</div>
 			</div>
 		</div>
@@ -236,18 +358,10 @@
 			</div>
 			<div class="row-options">
 				<div class="cell-options">
-					<input type="radio" id="wheel" name="order" value="wheel" class="checks">
+					<input type="radio" id="stifter" name="order" value="stifter" class="checks">
 				</div>
 				<div class="cell-options">
-					<label for="wheel">Wheelock</label>
-				</div>
-			</div>
-			<div class="row-options">
-				<div class="cell-options">
-					<input type="radio" id="brit" name="order" value="brit" class="checks">
-				</div>
-				<div class="cell-options">
-					<label for="brit">British</label>
+					<label for="stifter">Stifter</label>
 				</div>
 			</div>
 		</div>

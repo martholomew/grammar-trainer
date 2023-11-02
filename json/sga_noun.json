@@ -1,10 +1,10 @@
 {"o_stems": [
   {
     "word": "fer",
-    "word_more": "fer, fir, -o- m.: man",
+    "word_more": "fer, fir, -o m.: man",
     "forms": {
       "s_nom":"fer",
-      "s_nom_im": "",
+      "s_nom_im": "0",
       "p_nom": "fir",
       "p_nom_im": "l",
       "d_nom_part": "dá",
@@ -30,11 +30,11 @@
       "s_dat": "fiur",
       "s_dat_im": "l",
       "p_dat": "feraib",
-      "p_dat_im": "",
+      "p_dat_im": "0",
       "d_dat_part": "dib",
       "d_dat_part_im": "n",
       "d_dat": "feraib",
-      "d_dat_im": "",
+      "d_dat_im": "0",
       "s_voc_part": "á",
       "s_voc_part_im": "l",
       "s_voc": "ḟir",
@@ -42,19 +42,15 @@
       "p_voc_part": "á",
       "p_voc_part_im": "l",
       "p_voc": "ḟiru",
-      "p_voc_im": "h",
-      "d_voc_part": "dá",
-      "d_voc_part_im": "l",
-      "d_voc": "ḟer",
-      "d_voc_im": "l"
+      "p_voc_im": "h"
     }
   },
   {
     "word": "ech",
-    "word_more": "ech, eich, -o- m.: horse",
+    "word_more": "ech, eich, -o m.: horse",
     "forms": {
       "s_nom":"ech",
-      "s_nom_im": "",
+      "s_nom_im": "0",
       "p_nom": "eich",
       "p_nom_im": "l",
       "d_nom_part": "dá",
@@ -63,7 +59,7 @@
       "d_nom_im": "l",
       "s_acc": "ech",
       "s_acc_im": "n",
-      "p_acc": "echu|euchu",
+      "p_acc": "echu;euchu",
       "p_acc_im": "h",
       "d_acc_part": "dá",
       "d_acc_part_im": "l",
@@ -80,11 +76,11 @@
       "s_dat": "euch",
       "s_dat_im": "l",
       "p_dat": "echaib",
-      "p_dat_im": "",
+      "p_dat_im": "0",
       "d_dat_part": "dib",
       "d_dat_part_im": "n",
       "d_dat": "n-echaib",
-      "d_dat_im": "",
+      "d_dat_im": "0",
       "s_voc_part": "á",
       "s_voc_part_im": "l",
       "s_voc": "eich",
@@ -92,19 +88,15 @@
       "p_voc_part": "á",
       "p_voc_part_im": "l",
       "p_voc": "echu",
-      "p_voc_im": "h",
-      "d_voc_part": "dá",
-      "d_voc_part_im": "l",
-      "d_voc": "ech",
-      "d_voc_im": "l"
+      "p_voc_im": "h"
     }
   },
   {
   "word": "son",
-  "word_more": "son, suin, -o- m.: sound",
+  "word_more": "son, suin, -o m.: sound",
   "forms": {
       "s_nom":"son",
-      "s_nom_im": "",
+      "s_nom_im": "0",
       "p_nom": "suin",
       "p_nom_im": "l",
       "d_nom_part": "dá",
@@ -130,11 +122,11 @@
       "s_dat": "sun",
       "s_dat_im": "l",
       "p_dat": "sonaib",
-      "p_dat_im": "",
+      "p_dat_im": "0",
       "d_dat_part": "dib",
       "d_dat_part_im": "n",
       "d_dat": "sonaib",
-      "d_dat_im": "",
+      "d_dat_im": "0",
       "s_voc_part": "á",
       "s_voc_part_im": "l",
       "s_voc": "ṡoin",
@@ -142,29 +134,25 @@
       "p_voc_part": "á",
       "p_voc_part_im": "l",
       "p_voc": "ṡunu",
-      "p_voc_im": "h",
-      "d_voc_part": "dá",
-      "d_voc_part_im": "l",
-      "d_voc": "ṡon",
-      "d_voc_im": "l"
+      "p_voc_im": "h"
     }
   },
   {
   "word": "cenn",
-  "word_more": "cenn, cinn, -o- n.: head",
+  "word_more": "cenn, cinn, -o n.: head",
   "forms": {
     "s_nom":"cenn",
     "s_nom_im": "n",
-    "p_nom": "cenn|cenna",
-    "p_nom_im": "l|h",
+    "p_nom": "cenn;cenna",
+    "p_nom_im": "l;h",
     "d_nom_part": "dá",
     "d_nom_part_im": "n",
     "d_nom": "cenn",
     "d_nom_im": "n",
     "s_acc": "cenn",
     "s_acc_im": "n",
-    "p_acc": "cenn|cenna",
-    "p_acc_im": "l|h",
+    "p_acc": "cenn;cenna",
+    "p_acc_im": "l;h",
     "d_acc_part": "dá",
     "d_acc_part_im": "n",
     "d_acc": "cenn",
@@ -180,11 +168,11 @@
     "s_dat": "ciunn",
     "s_dat_im": "l",
     "p_dat": "cennaib",
-    "p_dat_im": "",
+    "p_dat_im": "0",
     "d_dat_part": "dib",
     "d_dat_part_im": "n",
     "d_dat": "cennaib",
-    "d_dat_im": "",
+    "d_dat_im": "0",
     "s_voc_part": "á",
     "s_voc_part_im": "l",
     "s_voc": "chenn",
@@ -192,21 +180,17 @@
     "p_voc_part": "á",
     "p_voc_part_im": "l",
     "p_voc": "chenna",
-    "p_voc_im": "h",
-    "d_voc_part": "",
-    "d_voc_part_im": "",
-    "d_voc": "",
-    "d_voc_im": ""
+    "p_voc_im": "h"
     }
   }
   ],
 "io_stems": [
   {
   "word": "céile",
-  "word_more": "céile, céili, -i̯o- m.: companion",
+  "word_more": "céile, céili, -i̯o m.: companion",
   "forms": {
     "s_nom":"céile",
-    "s_nom_im": "",
+    "s_nom_im": "0",
     "p_nom": "céili",
     "p_nom_im": "l",
     "d_nom_part": "dá",
@@ -232,11 +216,11 @@
     "s_dat": "céiliu",
     "s_dat_im": "l",
     "p_dat": "céilib",
-    "p_dat_im": "",
+    "p_dat_im": "0",
     "d_dat_part": "dib",
     "d_dat_part_im": "n",
     "d_dat": "céilib",
-    "d_dat_im": "",
+    "d_dat_im": "0",
     "s_voc_part": "á",
     "s_voc_part_im": "l",
     "s_voc": "chéili",
@@ -244,19 +228,15 @@
     "p_voc_part": "á",
     "p_voc_part_im": "l",
     "p_voc": "chéiliu",
-    "p_voc_im": "h",
-    "d_voc_part": "",
-    "d_voc_part_im": "",
-    "d_voc": "",
-    "d_voc_im": ""
+    "p_voc_im": "h"
     }
   },
   {
   "word": "daltae",
-  "word_more": "daltae, daltai, -i̯o- m.: fosterling",
+  "word_more": "daltae, daltai, -i̯o m.: fosterling",
   "forms": {
     "s_nom":"daltae",
-    "s_nom_im": "",
+    "s_nom_im": "0",
     "p_nom": "daltai",
     "p_nom_im": "l",
     "d_nom_part": "dá",
@@ -282,11 +262,11 @@
     "s_dat": "daltu",
     "s_dat_im": "l",
     "p_dat": "daltaib",
-    "p_dat_im": "",
+    "p_dat_im": "0",
     "d_dat_part": "dib",
     "d_dat_part_im": "n",
     "d_dat": "ndaltaib",
-    "d_dat_im": "",
+    "d_dat_im": "0",
     "s_voc_part": "á",
     "s_voc_part_im": "l",
     "s_voc": "daltai",
@@ -294,16 +274,12 @@
     "p_voc_part": "á",
     "p_voc_part_im": "l",
     "p_voc": "daltu",
-    "p_voc_im": "h",
-    "d_voc_part": "",
-    "d_voc_part_im": "",
-    "d_voc": "",
-    "d_voc_im": ""
+    "p_voc_im": "h"
     }
   },
   {
   "word": "cride",
-  "word_more": "cride, cridi, -i̯o- n.: heart",
+  "word_more": "cride, cridi, -i̯o n.: heart",
   "forms": {
     "s_nom":"cride",
     "s_nom_im": "n",
@@ -332,11 +308,11 @@
     "s_dat": "cridiu",
     "s_dat_im": "l",
     "p_dat": "cridib",
-    "p_dat_im": "",
+    "p_dat_im": "0",
     "d_dat_part": "dib",
     "d_dat_part_im": "n",
     "d_dat": "cridib",
-    "d_dat_im": "",
+    "d_dat_im": "0",
     "s_voc_part": "á",
     "s_voc_part_im": "l",
     "s_voc": "chride",
@@ -344,16 +320,12 @@
     "p_voc_part": "á",
     "p_voc_part_im": "l",
     "p_voc": "chride",
-    "p_voc_im": "l",
-    "d_voc_part": "",
-    "d_voc_part_im": "",
-    "d_voc": "",
-    "d_voc_im": ""
+    "p_voc_im": "l"
     }
   },
   {
   "word": "cumachtae",
-  "word_more": "cumachtae, cumachtai, -i̯o- n.: power",
+  "word_more": "cumachtae, cumachtai, -i̯o n.: power",
   "forms": {
     "s_nom":"cumachtae",
     "s_nom_im": "n",
@@ -382,11 +354,11 @@
     "s_dat": "cumachtu",
     "s_dat_im": "l",
     "p_dat": "cumachtaib",
-    "p_dat_im": "",
+    "p_dat_im": "0",
     "d_dat_part": "dib",
     "d_dat_part_im": "n",
     "d_dat": "cumachtaib",
-    "d_dat_im": "",
+    "d_dat_im": "0",
     "s_voc_part": "á",
     "s_voc_part_im": "l",
     "s_voc": "chumachtae",
@@ -394,11 +366,7 @@
     "p_voc_part": "á",
     "p_voc_part_im": "l",
     "p_voc": "chumachtae",
-    "p_voc_im": "l",
-    "d_voc_part": "",
-    "d_voc_part_im": "",
-    "d_voc": "",
-    "d_voc_im": ""
+    "p_voc_im": "l"
     }
   }
 ]

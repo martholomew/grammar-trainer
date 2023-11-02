@@ -1,7 +1,8 @@
 {
 	"lat_noun": {
+		"type": "noun",
 		"numbers": ["s", "p"],
-		"default": "ucc",
+		"default": "me",
 		"orders": {
 			"trad": [
 				"nom",
@@ -27,7 +28,7 @@
 				"dat",
 				"abl"
 			],
-			"ucc": [
+			"me": [
 				"nom",
 				"acc",
 				"gen",
@@ -36,5 +37,41 @@
 				"voc"
 			]
 		}
+	},
+	"sga_noun": {
+		"type": "noun",
+		"numbers": ["s", "p", "d"],
+		"default": "me",
+		"orders": {
+			"trad": [
+				"nom",
+				"voc",
+				"acc",
+				"gen",
+				"dat"
+			],
+			"me": [
+				"nom",
+				"acc",
+				"gen",
+				"dat",
+				"voc"
+			],
+			"stifter": [
+				"nom",
+				"gen",
+				"dat",
+				"acc",
+				"voc"
+			]
+		}
+	},
+	"lat_verb": {
+		"type": "verb",
+		"numbers": ["s", "p"]
+	},
+	"sga_verb": {
+		"type": "verb",
+		"numbers": ["s", "p"]
 	}
 }
