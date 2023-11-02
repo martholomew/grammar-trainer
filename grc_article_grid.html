@@ -3,20 +3,23 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<title>Learn Old Irish Nouns</title>
+	<title>Learn the Greek Definite Article</title>
 	<link rel="stylesheet" href="css/style_new.css">
 	<style>
 		.table {
-			grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 			margin-left: 0%;
 			margin-right: 0%;
 		}
 		.row {
-			grid-template-columns: 2em 1em 1em 5em 1em auto;
+			grid-template-columns: 2em 2em auto 2em auto;
 		}
-		@media only screen and (max-width: 450px) {
+		@media only screen and (max-width: 380px) {
 			.table {
 				place-items: start start;
+			}
+			.single {
+				place-self: start start;
 			}
 		}
 	</style>
@@ -260,6 +263,59 @@
 				</div>
 				<div class="cell">
 					<a class="answer" id="n_p_dat_cor"><i>hid</i></a>
+				</div>
+			</div>
+		</div>
+		<div class="column single">
+			<div id="a_header_row" class="row">
+				<div class="cell">All</div>
+			</div>
+			<div id="a_header_row_2" class="row">
+				<div class="cell"></div>
+				<div class="cell">d.</div>
+			</div>
+			<div id="a_nom_row" class="row">
+				<div class="cell">
+					<label for="a_d_nom">nom.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="a_d_nom" name="a_d_nom">
+				</div>
+				<div class="cell">
+					<a class="answer" id="a_d_nom_cor"><i>hid</i></a>
+				</div>
+			</div>
+			<div id="n_acc_row" class="row">
+				<div class="cell">
+					<label for="a_d_acc">acc.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="a_d_acc" name="a_d_acc">
+				</div>
+				<div class="cell">
+					<a class="answer" id="a_d_acc_cor"><i>hid</i></a>
+				</div>
+			</div>
+			<div id="n_gen_row" class="row">
+				<div class="cell">
+					<label for="a_d_gen">gen.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="a_d_gen" name="a_d_gen">
+				</div>
+				<div class="cell">
+					<a class="answer" id="a_d_gen_cor"><i>hid</i></a>
+				</div>
+			</div>
+			<div id="n_dat_row" class="row">
+				<div class="cell">
+					<label for="a_d_dat">dat.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="a_d_dat" name="a_d_dat">
+				</div>
+				<div class="cell">
+					<a class="answer" id="a_d_dat_cor"><i>hid</i></a>
 				</div>
 			</div>
 		</div>

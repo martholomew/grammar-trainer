@@ -44,7 +44,7 @@ function checkAnswer(element, key, value) {
 }
 
 function pickWord() {
-	if (type === "article") {
+	if (type === "grc_article") {
 		word = json;
 	}
 	else {
@@ -79,7 +79,7 @@ function pickWord() {
 
 async function init(url, passed_type) {
 	document.getElementById("check").addEventListener("click", function(){nextWord()});
-	const res = await fetch("https://files.catbox.moe/wdmjr2.json");
+	const res = await fetch("https://martholomew.github.io/grammar-trainer/json/lang_info.json");
 	const lang_json = await res.json();
 
 	type = passed_type;
@@ -126,10 +126,19 @@ async function init(url, passed_type) {
 				element_list.push(number + "_" + prs);
 			}
 		}
-	} else if (lang_info["type"] === "article") {
-		for (let number of numbers) {
-			for (var prs = 1; prs < 4; prs++ ) {
-				element_list.push(number + "_" + prs);
+	} else if (type === "grc_article") {
+		hidden_text = "hid";
+		let genders = lang_info["genders"];
+		for (let gender of genders) {
+			for (let number of numbers) {
+				for (let value of lang_info["orders"]["trad"]) {
+					if (number === "d" && gender === "n") {
+						element_list.push("a_" + number + "_" + value);
+					} else if (number === "d") {
+					} else {
+						element_list.push(gender + "_" + number + "_" + value);
+					}
+				}
 			}
 		}
 	}
