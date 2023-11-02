@@ -73,5 +73,18 @@
 	"sga_verb": {
 		"type": "verb",
 		"numbers": ["s", "p"]
+	},
+	"grc_article": {
+		"type": "article",
+		"numbers": ["s", "p", "d"],
+		"genders": ["m", "f", "n"],
+		"orders": {
+			"trad": [
+				"nom",
+				"acc",
+				"gen",
+				"dat"
+			]
+		}
 	}
 }

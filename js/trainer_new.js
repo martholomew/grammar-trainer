@@ -79,7 +79,7 @@ function pickWord() {
 
 async function init(url, passed_type) {
 	document.getElementById("check").addEventListener("click", function(){nextWord()});
-	const res = await fetch("https://files.catbox.moe/bls5za.json");
+	const res = await fetch("https://files.catbox.moe/wdmjr2.json");
 	const lang_json = await res.json();
 
 	type = passed_type;
@@ -121,6 +121,12 @@ async function init(url, passed_type) {
 			}
 		}
 	} else if (lang_info["type"] === "verb") {
+		for (let number of numbers) {
+			for (var prs = 1; prs < 4; prs++ ) {
+				element_list.push(number + "_" + prs);
+			}
+		}
+	} else if (lang_info["type"] === "article") {
 		for (let number of numbers) {
 			for (var prs = 1; prs < 4; prs++ ) {
 				element_list.push(number + "_" + prs);
