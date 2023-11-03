@@ -189,7 +189,11 @@ function nextWord() {
 		let wrong = 0;
 		for (let [key, value] of Object.entries(word["forms"])) {
 			element = document.getElementById(key);
-			if (element.value !== value) {
+			let fixed_value = element.value;
+			if (passed_type === "grc_verb") {
+				fixed_value = fixed_value.replace("/[()]/g", "");
+			}
+			if (fixed_value !== value) {
 				wrong = 1;
 				element.style.backgroundColor = "#FF9B9B";
 			} else {

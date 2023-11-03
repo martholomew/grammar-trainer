@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Learn the Old Irish Definite Article</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		.table {
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+			margin-left: 0%;
+			margin-right: 0%;
+		}
+		.row {
+			grid-template-columns: 2em 1em 3em auto 1.75em 1.75em 1.75em;
+		}
+		@media only screen and (max-width: 380px) {
+			.table {
+				place-items: start start;
+			}
+			.single {
+				place-self: start start;
+			}
+		}
+	</style>
+	<script src="js/trainer.js"></script>
+</head>
+<body onload="init('https://martholomew.github.io/grammar-trainer/json/sga_noun.json', 'sga_article');">
+<main>
+	<h4 id="word" class="word">The Old Irish Definite Article</h4>
+	<section class="table">
+		<div class="column">
+			<div id="m_s_header_row" class="row">
+				<div class="cell">Maculine</div>
+			</div>
+			<div id="m_s_header_row_2" class="row">
+				<div class="cell"></div>
+				<div class="cell">his.</div>
+				<div class="cell">s.</div>
+				<div class="cell"></div>
+				<div class="cell">before</div>
+			</div>
+			<div id="m_s_nom_1_row" class="row">
+				<div class="cell">
+					<label for="m_s_nom_1">nom.</label>
+				</div>
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_s_nom_1" name="m_s_nom_1">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_s_nom_1_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_nom_1_bef_1" name="m_s_nom_1_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_nom_1_bef_2" name="m_s_nom_1_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_nom_1_bef_3" name="m_s_nom_1_bef_3">
+				</div>
+			</div>
+			<div id="m_s_nom_2_row" class="row">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_s_nom_2" name="m_s_nom_2">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_s_nom_2_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_nom_2_bef_1" name="m_s_nom_2_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_nom_2_bef_2" name="m_s_nom_2_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_nom_2_bef_3" name="m_s_nom_2_bef_3">
+				</div>
+			</div>
+			<div id="m_s_acc_1_row" class="row">
+				<div class="cell">
+					<label for="m_s_acc_1">acc.</label>
+				</div>
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_s_acc_1" name="m_s_acc_1">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_s_acc_1_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_acc_1_bef_1" name="m_s_acc_1_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_acc_1_bef_2" name="m_s_acc_1_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_acc_1_bef_3" name="m_s_acc_1_bef_3">
+				</div>
+			</div>
+			<div id="m_s_acc_2_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_s_acc_2_his" name="m_s_acc_2_his">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_acc_2" name="m_s_acc_2">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_s_acc_2_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_acc_2_bef_1" name="m_s_acc_2_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_acc_2_bef_2" name="m_s_acc_2_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_acc_2_bef_3" name="m_s_acc_2_bef_3">
+				</div>
+			</div>
+			<div id="m_s_gen_1_row" class="row">
+				<div class="cell">
+					<label for="m_s_gen_1">gen.</label>
+				</div>
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_s_gen_1" name="m_s_gen_1">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_s_gen_1_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_gen_1_bef_1" name="m_s_gen_1_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_gen_1_bef_2" name="m_s_gen_1_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_gen_1_bef_3" name="m_s_gen_1_bef_3">
+				</div>
+			</div>
+			<div id="m_s_gen_2_row" class="row">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_s_gen_2" name="m_s_gen_2">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_s_gen_2_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_gen_2_bef_1" name="m_s_gen_2_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_gen_2_bef_2" name="m_s_gen_2_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_gen_2_bef_3" name="m_s_gen_2_bef_3">
+				</div>
+			</div>
+			<div id="m_s_gen_3_row" class="row">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_s_gen_3" name="m_s_gen_3">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_s_gen_3_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_gen_3_bef_1" name="m_s_gen_3_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_gen_3_bef_2" name="m_s_gen_3_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_gen_3_bef_3" name="m_s_gen_3_bef_3">
+				</div>
+			</div>
+			<div id="m_s_dat_1_row" class="row">
+				<div class="cell">
+					<label for="m_s_dat_1_his">dat.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_1_his" name="m_s_dat_1_his">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_1" name="m_s_dat_1">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_s_dat_1_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_1_bef_1" name="m_s_dat_1_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_1_bef_2" name="m_s_dat_1_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_1_bef_3" name="m_s_dat_1_bef_3">
+				</div>
+			</div>
+			<div id="m_s_dat_2_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_2_his" name="m_s_dat_2_his">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_2" name="m_s_dat_2">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_s_dat_2_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_2_bef_1" name="m_s_dat_2_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_2_bef_2" name="m_s_dat_2_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_2_bef_3" name="m_s_dat_2_bef_3">
+				</div>
+			</div>
+			<div id="m_s_dat_3_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_3_his" name="m_s_dat_3_his">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_3" name="m_s_dat_3">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_s_dat_3_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_3_bef_1" name="m_s_dat_3_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_3_bef_2" name="m_s_dat_3_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_s_dat_3_bef_3" name="m_s_dat_3_bef_3">
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div id="m_p_header_row" class="row">
+				<div class="cell">Maculine</div>
+			</div>
+			<div id="m_p_header_row_2" class="row">
+				<div class="cell"></div>
+				<div class="cell">his.</div>
+				<div class="cell">s.</div>
+				<div class="cell"></div>
+				<div class="cell">before</div>
+			</div>
+			<div id="m_p_nom_1_row" class="row">
+				<div class="cell">
+					<label for="m_p_nom_1">nom.</label>
+				</div>
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_p_nom_1" name="m_p_nom_1">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_p_nom_1_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_nom_1_bef_1" name="m_p_nom_1_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_nom_1_bef_2" name="m_p_nom_1_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_nom_1_bef_3" name="m_p_nom_1_bef_3">
+				</div>
+			</div>
+			<div id="m_p_nom_2_row" class="row">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_p_nom_2" name="m_p_nom_2">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_p_nom_2_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_nom_2_bef_1" name="m_p_nom_2_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_nom_2_bef_2" name="m_p_nom_2_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_nom_2_bef_3" name="m_p_nom_2_bef_3">
+				</div>
+			</div>
+			<div id="m_p_nom_3_row" class="row">
+				<div class="cell"></div>
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_p_nom_3" name="m_p_nom_3">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_p_nom_3_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_nom_3_bef_1" name="m_p_nom_3_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_nom_3_bef_2" name="m_p_nom_3_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_nom_3_bef_3" name="m_p_nom_3_bef_3">
+				</div>
+			</div>
+			<div id="m_p_acc_1_row" class="row">
+				<div class="cell">
+					<label for="m_p_acc_1">acc.</label>
+				</div>
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_p_acc_1" name="m_p_acc_1">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_p_acc_1_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_acc_1_bef_1" name="m_p_acc_1_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_acc_1_bef_2" name="m_p_acc_1_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_acc_1_bef_3" name="m_p_acc_1_bef_3">
+				</div>
+			</div>
+			<div id="m_p_acc_2_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_p_acc_2_his" name="m_p_acc_2_his">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_acc_2" name="m_p_acc_2">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_p_acc_2_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_acc_2_bef_1" name="m_p_acc_2_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_acc_2_bef_2" name="m_p_acc_2_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_acc_2_bef_3" name="m_p_acc_2_bef_3">
+				</div>
+			</div>
+			<div id="m_p_gen_1_row" class="row">
+				<div class="cell">
+					<label for="m_p_gen_1">gen.</label>
+				</div>
+				<div class="cell"></div>
+				<div class="cell">
+					<input type="text" id="m_p_gen_1" name="m_p_gen_1">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_p_gen_1_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_gen_1_bef_1" name="m_p_gen_1_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_gen_1_bef_2" name="m_p_gen_1_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_gen_1_bef_3" name="m_p_gen_1_bef_3">
+				</div>
+			</div>
+			<div id="m_p_dat_1_row" class="row">
+				<div class="cell">
+					<label for="m_p_dat_1_his">dat.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_dat_1_his" name="m_p_dat_1_his">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_dat_1" name="m_p_dat_1">
+				</div>
+				<div class="cell">
+					<a class="answer" id="m_p_dat_1_cor"><i>hid</i></a>
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_dat_1_bef_1" name="m_p_dat_1_bef_1">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_dat_1_bef_2" name="m_p_dat_1_bef_2">
+				</div>
+				<div class="cell">
+					<input type="text" id="m_p_dat_1_bef_3" name="m_p_dat_1_bef_3">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="options">
+		<button class="check" type="button" id="check">Reveal</button>
+		<div class="results">
+			<a>Correct:</a>
+			<a id="results">0/0</a>
+		</div>
+		<hr>
+	</section>
+	<section class="table-options">
+		<div class="column-options">
+			<div class="row-options">
+				<div class="cell-options">
+					<a class="header-options">Order</a>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="radio" id="trad" name="order" value="trad" class="checks" checked>
+				</div>
+				<div class="cell-options">
+					<label for="trad">Traditional</label>
+				</div>
+			</div>
+		</div>
+		<div class="column-options">
+			<div class="row-options">
+				<div class="cell-options">
+					<a class="header-options">Options</a>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="checkbox" id="imm" name="imm" value="true" class="checks" checked>
+				</div>
+				<div class="cell-options">
+					<label for="imm">Immediate Feedback</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="checkbox" id="next" name="next" value="true" class="checks" checked>
+				</div>
+				<div class="cell-options">
+					<label for="next">Straight to Next</label>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+</body>
+</html>
