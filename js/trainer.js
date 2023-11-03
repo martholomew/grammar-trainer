@@ -15,7 +15,12 @@ hidden_text = "hidden"
 
 function checkAnswer(element, key, value) {
 	if (document.getElementById("imm").checked) {
-		if (element.value === value) {
+		let fixed_value = element.value;
+		if (passed_type === "grc_verb") {
+			fixed_value = fixed_value.replace("/[()]/g", "");
+		}
+		console.log(fixed_value);
+		if (fixed_value === value) {
 			element.style.backgroundColor = "#CBFFA9";
 			let index = element_list.indexOf(key);
 			if (index + 1 < element_list.length) {
@@ -25,7 +30,12 @@ function checkAnswer(element, key, value) {
 					let wrong = 0;
 					for (let [key, value] of Object.entries(word["forms"])) {
 						element = document.getElementById(key);
-						if (element.value !== value) {
+						let fixed_value = element.value;
+						if (passed_type === "grc_verb") {
+							fixed_value = fixed_value.replace("/[()]/g", "");
+						}
+						console.log(fixed_value);
+						if (fixed_value !== value) {
 							wrong = 1;
 						}
 					}
@@ -193,6 +203,7 @@ function nextWord() {
 			if (passed_type === "grc_verb") {
 				fixed_value = fixed_value.replace("/[()]/g", "");
 			}
+			console.log(fixed_value);
 			if (fixed_value !== value) {
 				wrong = 1;
 				element.style.backgroundColor = "#FF9B9B";
