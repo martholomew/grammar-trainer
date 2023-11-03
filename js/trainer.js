@@ -1,5 +1,6 @@
 var word;
 var type;
+var passed_type;
 var first_field;
 var questions = 0;
 var right = 0;
@@ -8,7 +9,8 @@ var enter = 0;
 var element_list = [];
 var numbers = [];
 var orders = [];
-var current_order = [];
+var current_order = "";
+var pretty_answers = {};
 hidden_text = "hidden"
 
 function checkAnswer(element, key, value) {
@@ -28,6 +30,8 @@ function checkAnswer(element, key, value) {
 						}
 					}
 					if (wrong === 0) {
+						enter = 0;
+						nextWord();
 						enter = 1;
 						nextWord();
 						return 0;
@@ -44,7 +48,7 @@ function checkAnswer(element, key, value) {
 }
 
 function pickWord() {
-	if (type === "grc_article") {
+	if (passed_type === "grc_article") {
 		word = json;
 	}
 	else {
@@ -77,41 +81,32 @@ function pickWord() {
 	}
 }
 
-async function init(url, passed_type) {
+async function init(url, passed) {
 	document.getElementById("check").addEventListener("click", function(){nextWord()});
 	const res = await fetch("https://martholomew.github.io/grammar-trainer/json/lang_info.json");
 	const lang_json = await res.json();
-
-	type = passed_type;
-	let lang_info = lang_json[type];
+	passed_type = passed;
+	let lang_info = lang_json[passed_type];
+	type = lang_info["type"];
 	numbers = lang_info["numbers"];
-	if (lang_info["type"] === "noun") {
+	current_order = lang_info["default"];
+
+	if (Object.keys(json).length === 0) {
+		const res = await fetch(url);
+		json = await res.json();
+	}
+
+	pickWord();
+
+	if (type === "noun") {
 		orders = lang_info["orders"];
-		let default_order = lang_info["default"];
-		current_order = orders[default_order];
-		for (let number of numbers) {
-			for (let value of current_order) {
-				if (passed_type === "sga_noun") {
-					if (number == "d" || value == "voc") {
-						element_list.push(number + "_" + value + "_part");
-						element_list.push(number + "_" + value + "_part_im");
-						element_list.push(number + "_" + value);
-						element_list.push(number + "_" + value + "_im");
-					} else {
-						element_list.push(number + "_" + value);
-						element_list.push(number + "_" + value + "_im");
-					}
-				} else {
-					element_list.push(number + "_" + value);
-				}
-			}
-		}
+		changeOrder(current_order, 1);
 
 		let radios = document.getElementsByName("order");
 		for (let radio of radios) {
-			radio.addEventListener("change", function(){changeOrder(radio.id)});
+			radio.addEventListener("change", function(){changeOrder(radio.id, 0)});
 		}
-	} else if (type === "sga_verb") {
+	} else if (passed_type === "sga_verb") {
 		let verb_forms = ["abs", "conj"];
 		for (let form of verb_forms) {
 			for (let number of numbers) {
@@ -120,18 +115,18 @@ async function init(url, passed_type) {
 				}
 			}
 		}
-	} else if (lang_info["type"] === "verb") {
+	} else if (type === "verb") {
 		for (let number of numbers) {
 			for (var prs = 1; prs < 4; prs++ ) {
 				element_list.push(number + "_" + prs);
 			}
 		}
-	} else if (type === "grc_article") {
+	} else if (passed_type === "grc_article") {
 		hidden_text = "hid";
 		let genders = lang_info["genders"];
 		for (let gender of genders) {
 			for (let number of numbers) {
-				for (let value of lang_info["orders"]["trad"]) {
+				for (let value of lang_info["orders"][current_order]) {
 					if (number === "d" && gender === "n") {
 						element_list.push("a_" + number + "_" + value);
 					} else if (number === "d") {
@@ -142,37 +137,48 @@ async function init(url, passed_type) {
 			}
 		}
 	}
-	if (Object.keys(json).length === 0) {
-		const res = await fetch(url);
-		json = await res.json();
+	if (type !== "noun") {
+		for (element of element_list) {
+			pretty_answers[element + "_cor"] = word["forms"][element];
+		}
 	}
 	first_field = element_list[0];
-	pickWord();
 }
 
-function changeOrder(order) {
+function changeOrder(order, init) {
 	element_list = [];
-	current_order = orders[order];
+	let order_list = orders[order];
+
+	let answer = "";
+	let forms = word["forms"];
 	for (let number of numbers) {
 		let previous_element = document.getElementById(number + "_header_row");
-		for (let value of current_order) {
+		for (let value of order_list) {
 			let current_element_name = number + "_" + value + "_row";
 			if (passed_type === "sga_noun") {
-				if ((number == "s" || number == "p") && value !== "voc") {
-					element_list.push(number + "_" + value);
-					element_list.push(number + "_" + value + "_im");
-				} else {
+				if (number == "d" && value == "voc") {
+					continue;
+				} else if (number == "d" || value == "voc") {
 					element_list.push(number + "_" + value + "_part");
 					element_list.push(number + "_" + value + "_part_im");
 					element_list.push(number + "_" + value);
 					element_list.push(number + "_" + value + "_im");
+					answer = forms[number + "_" + value + "_part"] + "<sup>" + forms[number + "_" + value + "_part_im"].toUpperCase() + "</sup> " + forms[number + "_" + value] + "<sup>" + forms[number + "_" + value + "_im"].toUpperCase() + "</sup>";
+				} else {
+					element_list.push(number + "_" + value);
+					element_list.push(number + "_" + value + "_im");
+					answer = forms[number + "_" + value] + "<sup>" + forms[number + "_" + value + "_im"].toUpperCase() + "</sup>";
 				}
 			} else {
 				element_list.push(number + "_" + value);
+				answer = forms[number + "_" + value];
 			}
-			let element = document.getElementById(current_element_name);
-			previous_element.insertAdjacentElement("afterend", element);
-			previous_element = element;
+			pretty_answers[number + "_" + value + "_cor"] = answer;
+			if (init === 0) {
+				let element = document.getElementById(current_element_name);
+				previous_element.insertAdjacentElement("afterend", element);
+				previous_element = element;
+			}
 		}
 	}
 }
@@ -189,30 +195,15 @@ function nextWord() {
 			} else {
 				element.style.backgroundColor = "#CBFFA9";
 			}
-			if (type !== "sga_noun") {
-				document.getElementById(key + "_cor").textContent = value;
-			}
+		}
+		for (let [key, value] of Object.entries(pretty_answers)) {
+			document.getElementById(key).innerHTML = value;
 		}
 		if (wrong === 0) {
 				right += 1;
 		}
 		questions += 1;
 		document.getElementById("results").textContent = right + "/" + questions;
-		if (type === "noun_sga") {
-			let answer = "";
-			let forms = word["forms"];
-			for (a_case of current_order) {
-				for (number of numbers) {
-					if (number === "d" || a_case === "voc") {
-						answer = forms[number + "_" + a_case + "_part"] + "<sup>" + forms[number + "_" + a_case + "_part_im"].toUpperCase() + "</sup> " + forms[number + "_" + a_case] + "<sup>" + forms[number + "_" + a_case + "_im"].toUpperCase() + "</sup>";
-					}
-					else {
-						answer = forms[number + "_" + a_case] + "<sup>" + forms[number + "_" + a_case + "_im"].toUpperCase() + "</sup>";
-					}
-					document.getElementById(number + "_" + a_case + "_cor").innerHTML = answer;
-				}
-			}
-		}
 		enter = 1;
 	} else {
 		document.getElementById("check").textContent = "Reveal";
@@ -220,19 +211,18 @@ function nextWord() {
 		for (let [key, value] of Object.entries(word["forms"])) {
 			document.getElementById(key).style.backgroundColor = "white";
 			document.getElementById(key).value = "";
-
-			if (type != "sga_noun") {
-				document.getElementById(key + "_cor").innerHTML = "<i>" + hidden_text + "</i>";
-			}
-			else {
-				for (a_case of current_order) {
-					for (number of numbers) {
-						document.getElementById(number + "_" + a_case + "_cor").innerHTML = "<i>" + hidden_text + "</i>";
-					}
-				}
-			}
+		}
+		for (let [key, value] of Object.entries(pretty_answers)) {
+			document.getElementById(key).innerHTML = "<i>" + hidden_text + "</i>";
 		}
 		document.getElementById(first_field).focus();
+		if (type === "noun") {
+			changeOrder(current_order, 1);
+		} else {
+			for (element of element_list) {
+				pretty_answers[element + "_cor"] = word["forms"][element];
+			}
+		}
 		enter = 0;
 	}
 }
