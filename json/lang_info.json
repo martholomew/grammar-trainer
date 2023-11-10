@@ -38,6 +38,37 @@
 			]
 		}
 	},
+	"grc_noun": {
+		"type": "noun",
+		"numbers": ["s", "p"],
+		"default": "me",
+		"orders": {
+			"trad": [
+				"nom",
+				"gen",
+				"dat",
+				"acc"
+			],
+			"wheel": [
+				"nom",
+				"gen",
+				"dat",
+				"acc"
+			],
+			"brit": [
+				"nom",
+				"acc",
+				"gen",
+				"dat"
+			],
+			"me": [
+				"nom",
+				"acc",
+				"gen",
+				"dat"
+			]
+		}
+	},
 	"sga_noun": {
 		"type": "noun",
 		"numbers": ["s", "p", "d"],

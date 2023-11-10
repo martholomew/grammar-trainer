@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>Learn Greek Nouns</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/trainer.js"></script>
+</head>
+<body onload="init('https://martholomew.github.io/grammar-trainer/json/grc_noun.json', 'grc_noun');">
+<main>
+	<h4 id="word" class="word"><i>word is loading...</i></h4>
+	<section class="table">
+		<div class="column">
+			<div id="s_header_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">singular</div>
+			</div>
+			<div id="s_nom_row" class="row">
+				<div class="cell">
+					<label for="s_nom">nom.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_nom" name="s_nom">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_nom_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="s_acc_row" class="row">
+				<div class="cell">
+					<label for="s_acc">acc.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_acc" name="s_acc">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_acc_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="s_gen_row" class="row">
+				<div class="cell">
+					<label for="s_gen">gen.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_gen" name="s_gen">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_gen_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="s_dat_row" class="row">
+				<div class="cell">
+					<label for="s_dat">dat.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="s_dat" name="s_dat">
+				</div>
+				<div class="cell">
+					<a class="answer" id="s_dat_cor"><i>hidden</i></a>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div id="p_header_row" class="row">
+				<div class="cell"></div>
+				<div class="cell">plural</div>
+			</div>
+			<div id="p_nom_row" class="row">
+				<div class="cell">
+					<label for="p_nom">nom.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_nom" name="p_nom">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_nom_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="p_acc_row" class="row">
+				<div class="cell">
+					<label for="p_acc">acc.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_acc" name="p_acc">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_acc_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="p_gen_row" class="row">
+				<div class="cell">
+					<label for="p_gen">gen.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_gen" name="p_gen">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_gen_cor"><i>hidden</i></a>
+				</div>
+			</div>
+			<div id="p_dat_row" class="row">
+				<div class="cell">
+					<label for="p_dat">dat.</label>
+				</div>
+				<div class="cell">
+					<input type="text" id="p_dat" name="p_dat">
+				</div>
+				<div class="cell">
+					<a class="answer" id="p_dat_cor"><i>hidden</i></a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="options">
+		<button class="check" type="button" id="check">Reveal</button>
+		<div class="results">
+			<a>Correct:</a>
+			<a id="results">0/0</a>
+		</div>
+		<hr>
+	</section>
+	<section class="table-options">
+		<div class="column-options">
+			<div class="row-options">
+				<div class="cell-options">
+					<a class="header-options">Declensions</a>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input class="groups" type="checkbox" id="d1" name="d1" value="true" checked>
+				</div>
+				<div class="cell-options">
+					<label for="d1">1st</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input class="groups" type="checkbox" id="d2" name="d2" value="true" checked>
+				</div>
+				<div class="cell-options">
+					<label for="d2">2nd</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input class="groups" type="checkbox" id="d3" name="d3" value="true" checked>
+				</div>
+				<div class="cell-options">
+					<label for="d3">3rd</label>
+				</div>
+			</div>
+		</div>
+		<div class="column-options">
+			<div class="row-options">
+				<div class="cell-options">
+					<a class="header-options">Order</a>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="radio" id="me" name="order" value="me" class="checks" checked>
+				</div>
+				<div class="cell-options">
+					<label for="me">Matthew (default)</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="radio" id="trad" name="order" value="trad" class="checks">
+				</div>
+				<div class="cell-options">
+					<label for="trad">Traditional</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="radio" id="wheel" name="order" value="wheel" class="checks">
+				</div>
+				<div class="cell-options">
+					<label for="wheel">Wheelock</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="radio" id="brit" name="order" value="brit" class="checks">
+				</div>
+				<div class="cell-options">
+					<label for="brit">British</label>
+				</div>
+			</div>
+		</div>
+		<div class="column-options">
+			<div class="row-options">
+				<div class="cell-options">
+					<a class="header-options">Options</a>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="checkbox" id="minim" name="minim" value="true" class="checks">
+				</div>
+				<div class="cell-options">
+					<label for="minim">Minimum Info</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="checkbox" id="imm" name="imm" value="true" class="checks" checked>
+				</div>
+				<div class="cell-options">
+					<label for="imm">Immediate Feedback</label>
+				</div>
+			</div>
+			<div class="row-options">
+				<div class="cell-options">
+					<input type="checkbox" id="next" name="next" value="true" class="checks" checked>
+				</div>
+				<div class="cell-options">
+					<label for="next">Straight to Next</label>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+</body>
+</html>
