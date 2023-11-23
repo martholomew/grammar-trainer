@@ -8,12 +8,12 @@
 	<style>
 		.table {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 			margin-left: 0%;
 			margin-right: 0%;
 		}
 		.row {
-			grid-template-columns: 2em 5em 5em 1em auto;
+			grid-template-columns: 2em 5em 1em auto;
 		}
 		.row-question {
 			grid-template-columns: 5em 2em 5em auto;
@@ -29,7 +29,7 @@
 	</style>
 	<script src="js/trainer.js"></script>
 </head>
-<body onload="init('https://martholomew.github.io/grammar-trainer/json/sga_noun.json', 'sga_article');">
+<body onload="init('https://martholomew.github.io/grammar-trainer/json/sga_article.json', 'sga_article');">
 <main>
 	<h4 id="word" class="word">The Old Irish Definite Article</h4>
 	<section class="table">
@@ -40,7 +40,6 @@
 			<div id="m_s_header_row_2" class="row">
 				<div class="cell"></div>
 				<div class="cell">s.</div>
-				<div class="cell">prep.</div>
 				<div class="cell">IM</div>
 			</div>
 			<div id="m_s_nom_row" class="row">
@@ -50,7 +49,6 @@
 				<div class="cell">
 					<input type="text" id="m_s_nom" name="m_s_nom">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="m_s_nom_im" name="m_s_nom_im">
 				</div>
@@ -66,9 +64,6 @@
 					<input type="text" id="m_s_acc" name="m_s_acc">
 				</div>
 				<div class="cell">
-					<input type="text" id="m_s_acc_prep" name="m_s_acc_prep">
-				</div>
-				<div class="cell">
 					<input type="text" id="m_s_acc_im" name="m_s_acc_im">
 				</div>
 				<div class="cell">
@@ -82,7 +77,6 @@
 				<div class="cell">
 					<input type="text" id="m_s_gen" name="m_s_gen">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="m_s_gen_im" name="m_s_gen_im">
 				</div>
@@ -94,9 +88,8 @@
 				<div class="cell">
 					<label for="m_s_dat">dat.</label>
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
-					<input type="text" id="m_s_dat_prep" name="m_s_dat_prep">
+					<input type="text" id="m_s_dat" name="m_s_dat">
 				</div>
 				<div class="cell">
 					<input type="text" id="m_s_dat_im" name="m_s_dat_im">
@@ -108,7 +101,6 @@
 			<div id="m_p_header_row_1" class="row">
 				<div class="cell"></div>
 				<div class="cell">p.</div>
-				<div class="cell">prep.</div>
 				<div class="cell">IM</div>
 			</div>
 			<div id="m_p_nom_row" class="row">
@@ -118,7 +110,6 @@
 				<div class="cell">
 					<input type="text" id="m_p_nom" name="m_p_nom">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="m_p_nom_im" name="m_p_nom_im">
 				</div>
@@ -134,9 +125,6 @@
 					<input type="text" id="m_p_acc" name="m_p_acc">
 				</div>
 				<div class="cell">
-					<input type="text" id="m_p_acc_prep" name="m_p_acc_prep">
-				</div>
-				<div class="cell">
 					<input type="text" id="m_p_acc_im" name="m_p_acc_im">
 				</div>
 				<div class="cell">
@@ -150,7 +138,6 @@
 				<div class="cell">
 					<input type="text" id="m_p_gen" name="m_p_gen">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="m_p_gen_im" name="m_p_gen_im">
 				</div>
@@ -162,9 +149,8 @@
 				<div class="cell">
 					<label for="m_p_dat">dat.</label>
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
-					<input type="text" id="m_p_dat_prep" name="m_p_dat_prep">
+					<input type="text" id="m_p_dat" name="m_p_dat">
 				</div>
 				<div class="cell">
 					<input type="text" id="m_p_dat_im" name="m_p_dat_im">
@@ -181,7 +167,6 @@
 			<div id="n_s_header_row_2" class="row">
 				<div class="cell"></div>
 				<div class="cell">s.</div>
-				<div class="cell">prep.</div>
 				<div class="cell">IM</div>
 			</div>
 			<div id="n_s_nom_row" class="row">
@@ -191,7 +176,6 @@
 				<div class="cell">
 					<input type="text" id="n_s_nom" name="n_s_nom">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="n_s_nom_im" name="n_s_nom_im">
 				</div>
@@ -207,9 +191,6 @@
 					<input type="text" id="n_s_acc" name="n_s_acc">
 				</div>
 				<div class="cell">
-					<input type="text" id="n_s_acc_prep" name="n_s_acc_prep">
-				</div>
-				<div class="cell">
 					<input type="text" id="n_s_acc_im" name="n_s_acc_im">
 				</div>
 				<div class="cell">
@@ -223,7 +204,6 @@
 				<div class="cell">
 					<input type="text" id="n_s_gen" name="n_s_gen">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="n_s_gen_im" name="n_s_gen_im">
 				</div>
@@ -235,9 +215,8 @@
 				<div class="cell">
 					<label for="n_s_dat">dat.</label>
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
-					<input type="text" id="n_s_dat_prep" name="n_s_dat_prep">
+					<input type="text" id="n_s_dat" name="n_s_dat">
 				</div>
 				<div class="cell">
 					<input type="text" id="n_s_dat_im" name="n_s_dat_im">
@@ -249,7 +228,6 @@
 			<div id="n_p_header_row_1" class="row">
 				<div class="cell"></div>
 				<div class="cell">p.</div>
-				<div class="cell">prep.</div>
 				<div class="cell">IM</div>
 			</div>
 			<div id="n_p_nom_row" class="row">
@@ -259,7 +237,6 @@
 				<div class="cell">
 					<input type="text" id="n_p_nom" name="n_p_nom">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="n_p_nom_im" name="n_p_nom_im">
 				</div>
@@ -275,9 +252,6 @@
 					<input type="text" id="n_p_acc" name="n_p_acc">
 				</div>
 				<div class="cell">
-					<input type="text" id="n_p_acc_prep" name="n_p_acc_prep">
-				</div>
-				<div class="cell">
 					<input type="text" id="n_p_acc_im" name="n_p_acc_im">
 				</div>
 				<div class="cell">
@@ -291,7 +265,6 @@
 				<div class="cell">
 					<input type="text" id="n_p_gen" name="n_p_gen">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="n_p_gen_im" name="n_p_gen_im">
 				</div>
@@ -303,9 +276,8 @@
 				<div class="cell">
 					<label for="n_p_dat">dat.</label>
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
-					<input type="text" id="n_p_dat_prep" name="n_p_dat_prep">
+					<input type="text" id="n_p_dat" name="n_p_dat">
 				</div>
 				<div class="cell">
 					<input type="text" id="n_p_dat_im" name="n_p_dat_im">
@@ -322,7 +294,6 @@
 			<div id="f_s_header_row_2" class="row">
 				<div class="cell"></div>
 				<div class="cell">s.</div>
-				<div class="cell">prep.</div>
 				<div class="cell">IM</div>
 			</div>
 			<div id="f_s_nom_row" class="row">
@@ -332,7 +303,6 @@
 				<div class="cell">
 					<input type="text" id="f_s_nom" name="f_s_nom">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="f_s_nom_im" name="f_s_nom_im">
 				</div>
@@ -348,9 +318,6 @@
 					<input type="text" id="f_s_acc" name="f_s_acc">
 				</div>
 				<div class="cell">
-					<input type="text" id="f_s_acc_prep" name="f_s_acc_prep">
-				</div>
-				<div class="cell">
 					<input type="text" id="f_s_acc_im" name="f_s_acc_im">
 				</div>
 				<div class="cell">
@@ -364,7 +331,6 @@
 				<div class="cell">
 					<input type="text" id="f_s_gen" name="f_s_gen">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="f_s_gen_im" name="f_s_gen_im">
 				</div>
@@ -376,9 +342,8 @@
 				<div class="cell">
 					<label for="f_s_dat">dat.</label>
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
-					<input type="text" id="f_s_dat_prep" name="f_s_dat_prep">
+					<input type="text" id="f_s_dat" name="f_s_dat">
 				</div>
 				<div class="cell">
 					<input type="text" id="f_s_dat_im" name="f_s_dat_im">
@@ -390,7 +355,6 @@
 			<div id="f_p_header_row_1" class="row">
 				<div class="cell"></div>
 				<div class="cell">p.</div>
-				<div class="cell">prep.</div>
 				<div class="cell">IM</div>
 			</div>
 			<div id="f_p_nom_row" class="row">
@@ -400,7 +364,6 @@
 				<div class="cell">
 					<input type="text" id="f_p_nom" name="f_p_nom">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="f_p_nom_im" name="f_p_nom_im">
 				</div>
@@ -416,9 +379,6 @@
 					<input type="text" id="f_p_acc" name="f_p_acc">
 				</div>
 				<div class="cell">
-					<input type="text" id="f_p_acc_prep" name="f_p_acc_prep">
-				</div>
-				<div class="cell">
 					<input type="text" id="f_p_acc_im" name="f_p_acc_im">
 				</div>
 				<div class="cell">
@@ -432,7 +392,6 @@
 				<div class="cell">
 					<input type="text" id="f_p_gen" name="f_p_gen">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="f_p_gen_im" name="f_p_gen_im">
 				</div>
@@ -444,9 +403,8 @@
 				<div class="cell">
 					<label for="f_p_dat">dat.</label>
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
-					<input type="text" id="f_p_dat_prep" name="f_p_dat_prep">
+					<input type="text" id="f_p_dat" name="f_p_dat">
 				</div>
 				<div class="cell">
 					<input type="text" id="f_p_dat_im" name="f_p_dat_im">
@@ -463,7 +421,6 @@
 			<div id="a_d_header_row_2" class="row">
 				<div class="cell"></div>
 				<div class="cell">d.</div>
-				<div class="cell">prep.</div>
 				<div class="cell">IM</div>
 			</div>
 			<div id="a_d_nom_row" class="row">
@@ -473,7 +430,6 @@
 				<div class="cell">
 					<input type="text" id="a_d_nom" name="a_d_nom">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="a_d_nom_im" name="a_d_nom_im">
 				</div>
@@ -489,9 +445,6 @@
 					<input type="text" id="a_d_acc" name="a_d_acc">
 				</div>
 				<div class="cell">
-					<input type="text" id="a_d_acc_prep" name="a_d_acc_prep">
-				</div>
-				<div class="cell">
 					<input type="text" id="a_d_acc_im" name="a_d_acc_im">
 				</div>
 				<div class="cell">
@@ -505,7 +458,6 @@
 				<div class="cell">
 					<input type="text" id="a_d_gen" name="a_d_gen">
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
 					<input type="text" id="a_d_gen_im" name="a_d_gen_im">
 				</div>
@@ -517,89 +469,14 @@
 				<div class="cell">
 					<label for="a_d_dat">dat.</label>
 				</div>
-				<div class="cell"></div>
 				<div class="cell">
-					<input type="text" id="a_d_dat_prep" name="a_d_dat_prep">
+					<input type="text" id="a_d_dat" name="a_d_dat">
 				</div>
 				<div class="cell">
 					<input type="text" id="a_d_dat_im" name="a_d_dat_im">
 				</div>
 				<div class="cell">
 					<a class="answer" id="a_d_dat_cor"><i>hid</i></a>
-				</div>
-			</div>
-		</div>
-		<div class="column">
-			<div id="question_header_row" class="row row-question">
-				<div class="cell">Questions</div>
-			</div>
-			<div id="question_header_row" class="row row-question">
-				<div class="cell"></div>
-				<div class="cell">form</div>
-				<div class="cell">before</div>
-			</div>
-			<div id="question_row_4" class="row row-question">
-				<div class="cell">
-					<label for="star">m. nom. s.</label>
-				</div>
-				<div class="cell">
-					<input type="text" id="if_lenited" name="if_lenited">
-				</div>
-				<div class="cell">
-					<input type="text" id="before" name="before">
-				</div>
-				<div class="cell">
-					<a class="answer" id="a_d_dat_cor"><i>hidden</i></a>
-				</div>
-			</div>
-			<div id="question_row_5" class="row row-question">
-				<div class="cell"></div>
-				<div class="cell">
-					<input type="text" id="if_lenited" name="if_lenited">
-				</div>
-				<div class="cell">
-					<input type="text" id="before" name="before">
-				</div>
-				<div class="cell">
-					<a class="answer" id="a_d_dat_cor"><i>hidden</i></a>
-				</div>
-			</div>
-			<div id="question_row_1" class="row row-question">
-				<div class="cell">
-					<label for="if_lenited">Lenited</label>
-				</div>
-				<div class="cell">
-					<input type="text" id="if_lenited" name="if_lenited">
-				</div>
-				<div class="cell">
-					<input type="text" id="before" name="before">
-				</div>
-				<div class="cell">
-					<a class="answer" id="a_d_dat_cor"><i>hidden</i></a>
-				</div>
-			</div>
-			<div id="question_row_2" class="row row-question">
-				<div class="cell"></div>
-				<div class="cell">
-					<input type="text" id="if_lenited" name="if_lenited">
-				</div>
-				<div class="cell">
-					<input type="text" id="before" name="before">
-				</div>
-				<div class="cell">
-					<a class="answer" id="a_d_dat_cor"><i>hidden</i></a>
-				</div>
-			</div>
-			<div id="question_row_3" class="row row-question">
-				<div class="cell"></div>
-				<div class="cell">
-					<input type="text" id="if_lenited" name="if_lenited">
-				</div>
-				<div class="cell">
-					<input type="text" id="before" name="before">
-				</div>
-				<div class="cell">
-					<a class="answer" id="a_d_dat_cor"><i>hidden</i></a>
 				</div>
 			</div>
 		</div>

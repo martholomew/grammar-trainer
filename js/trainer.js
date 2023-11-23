@@ -11,55 +11,48 @@ var numbers = [];
 var orders = [];
 var current_order = "";
 var pretty_answers = {};
+var controller;
 hidden_text = "hidden"
 
-function checkAnswer(element, key, value) {
+function fixAnswers(corr_answer) {
+	let fixed_answers = [];
+	fixed_answers.length = 0;
+	fixed_answers = corr_answer.split(";");
+	console.log(fixed_answers);
+	return fixed_answers;
+}
+
+function checkAnswer(answer_elem, key, corr_answer) {
 	if (document.getElementById("imm").checked) {
-		let fixed_value = element.value;
-		if (passed_type === "grc_verb") {
-			fixed_value = fixed_value.replace("/[()]/g", "");
-		}
-		console.log(fixed_value);
-		if (fixed_value === value) {
-			element.style.backgroundColor = "#CBFFA9";
+		let fixed_answers = [];
+		fixed_answers.length = 0;
+		fixed_answers = corr_answer.split(";");
+		console.log(fixed_answers);
+		if (fixed_answers.includes(answer_elem.value)) {
+			answer_elem.style.backgroundColor = "#CBFFA9";
 			let index = element_list.indexOf(key);
 			if (index + 1 < element_list.length) {
 				document.getElementById(element_list[index + 1]).focus();
 			} else {
 				if (document.getElementById("next").checked) {
-					let wrong = 0;
-					for (let [key, value] of Object.entries(word["forms"])) {
-						element = document.getElementById(key);
-						let fixed_value = element.value;
-						if (passed_type === "grc_verb") {
-							fixed_value = fixed_value.replace("/[()]/g", "");
-						}
-						console.log(fixed_value);
-						if (fixed_value !== value) {
-							wrong = 1;
-						}
-					}
-					if (wrong === 0) {
-						enter = 0;
-						nextWord();
-						enter = 1;
-						nextWord();
-						return 0;
-					}
+					nextWord();
+					nextWord();
+				} else {
+					document.getElementById("check").focus();
 				}
-				document.getElementById("check").focus();
 			}
 		} else {
-			element.style.backgroundColor = "#FF9B9B";
+			answer_elem.style.backgroundColor = "#FF9B9B";
 		}
 	} else {
-		element.style.backgroundColor = "white";
+		answer_elem.style.backgroundColor = "white";
 	}
 }
 
 function pickWord() {
-	if (passed_type === "grc_article") {
+	if (type === "article") {
 		word = json;
+		console.log(json);
 	}
 	else {
 		let chosen_groups = [];
@@ -85,9 +78,12 @@ function pickWord() {
 		}
 	}
 
+	controller = new AbortController();
+	let { signal } = controller;
 	for (let [key, value] of Object.entries(word["forms"])) {
 		let element = document.getElementById(key);
-		element.addEventListener("keyup", function(){checkAnswer(element, key, value)});
+		console.log(key, value, element);
+		element.addEventListener("keyup", function(){checkAnswer(element, key, value)}, { signal });
 	}
 }
 
@@ -197,18 +193,14 @@ function nextWord() {
 	if (enter === 0) {
 		document.getElementById("check").textContent = "Next";
 		let wrong = 0;
-		for (let [key, value] of Object.entries(word["forms"])) {
-			element = document.getElementById(key);
-			let fixed_value = element.value;
-			if (passed_type === "grc_verb") {
-				fixed_value = fixed_value.replace("/[()]/g", "");
-			}
-			console.log(fixed_value);
-			if (fixed_value !== value) {
-				wrong = 1;
-				element.style.backgroundColor = "#FF9B9B";
+		for (let [key, corr_answer] of Object.entries(word["forms"])) {
+			let answer_elem = document.getElementById(key);
+			fixed_answers = fixAnswers(corr_answer)
+			if (fixed_answers.includes(answer_elem.value)) {
+				answer_elem.style.backgroundColor = "#CBFFA9";
 			} else {
-				element.style.backgroundColor = "#CBFFA9";
+				wrong = 1;
+				answer_elem.style.backgroundColor = "#FF9B9B";
 			}
 		}
 		for (let [key, value] of Object.entries(pretty_answers)) {
@@ -221,6 +213,7 @@ function nextWord() {
 		document.getElementById("results").textContent = right + "/" + questions;
 		enter = 1;
 	} else {
+		controller.abort();
 		document.getElementById("check").textContent = "Reveal";
 		pickWord();
 		for (let [key, value] of Object.entries(word["forms"])) {
