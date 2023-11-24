@@ -113,6 +113,7 @@
 		"type": "article",
 		"numbers": ["s", "p", "d"],
 		"genders": ["m", "f", "n"],
+		"default": "trad",
 		"orders": {
 			"trad": [
 				"nom",
@@ -126,6 +127,7 @@
 		"type": "article",
 		"numbers": ["s", "p"],
 		"genders": ["m"],
+		"default": "trad",
 		"orders": {
 			"trad": [
 				"nom",

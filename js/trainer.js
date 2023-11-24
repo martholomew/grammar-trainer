@@ -127,12 +127,14 @@ async function init(url, passed) {
 				element_list.push(number + "_" + prs);
 			}
 		}
-	} else if (passed_type === "grc_article") {
+	} else if (type === "article") {
+		orders = lang_info["orders"];
+		changeOrder(current_order, 1);
 		hidden_text = "hid";
 		let genders = lang_info["genders"];
 		for (let gender of genders) {
 			for (let number of numbers) {
-				for (let value of lang_info["orders"][current_order]) {
+				for (let value of order_list) {
 					if (number === "d" && gender === "n") {
 						element_list.push("a_" + number + "_" + value);
 					} else if (number === "d") {
@@ -175,6 +177,10 @@ function changeOrder(order, init) {
 					element_list.push(number + "_" + value + "_im");
 					answer = forms[number + "_" + value] + "<sup>" + forms[number + "_" + value + "_im"].toUpperCase() + "</sup>";
 				}
+			} else if (passed_type === "sga_article") {
+				element_list.push(number + "_" + value);
+				element_list.push(number + "_" + value + "_im");
+				answer = forms[number + "_" + value] + "<sup>" + forms[number + "_" + value + "_im"].toUpperCase() + "</sup>";
 			} else {
 				element_list.push(number + "_" + value);
 				answer = forms[number + "_" + value];
