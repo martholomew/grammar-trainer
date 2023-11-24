@@ -180,6 +180,7 @@ function changeOrder(order, init) {
 			} else if (passed_type === "sga_article") {
 				element_list.push(number + "_" + value);
 				element_list.push(number + "_" + value + "_im");
+				console.log(element_list);
 				answer = forms[number + "_" + value] + "<sup>" + forms[number + "_" + value + "_im"].toUpperCase() + "</sup>";
 			} else {
 				element_list.push(number + "_" + value);

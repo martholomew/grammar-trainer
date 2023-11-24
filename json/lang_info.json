@@ -125,8 +125,8 @@
 	},
 	"sga_article": {
 		"type": "article",
-		"numbers": ["s", "p"],
-		"genders": ["m"],
+		"numbers": ["s", "p", "d"],
+		"genders": ["m", "f", "n"],
 		"default": "trad",
 		"orders": {
 			"trad": [
