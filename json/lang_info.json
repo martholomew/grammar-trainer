@@ -112,7 +112,7 @@
 	"grc_article": {
 		"type": "article",
 		"numbers": ["s", "p", "d"],
-		"genders": ["m", "f", "n"],
+		"genders": ["m", "f", "n", "a"],
 		"default": "trad",
 		"orders": {
 			"trad": [
@@ -126,7 +126,7 @@
 	"sga_article": {
 		"type": "article",
 		"numbers": ["s", "p", "d"],
-		"genders": ["m", "f", "n"],
+		"genders": ["m", "f", "n", "a"],
 		"default": "trad",
 		"orders": {
 			"trad": [

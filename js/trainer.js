@@ -7,6 +7,7 @@ var right = 0;
 var json = {};
 var enter = 0;
 var element_list = [];
+var genders = [];
 var numbers = [];
 var orders = [];
 var current_order = "";
@@ -96,6 +97,11 @@ async function init(url, passed) {
 	type = lang_info["type"];
 	numbers = lang_info["numbers"];
 	current_order = lang_info["default"];
+	if (lang_info["genders"]) {
+		genders = lang_info["genders"];
+	} else {
+		genders = ["null"];
+	}
 
 	if (Object.keys(json).length === 0) {
 		const res = await fetch(url);
@@ -131,19 +137,6 @@ async function init(url, passed) {
 		orders = lang_info["orders"];
 		changeOrder(current_order, 1);
 		hidden_text = "hid";
-		let genders = lang_info["genders"];
-		for (let gender of genders) {
-			for (let number of numbers) {
-				for (let value of order_list) {
-					if (number === "d" && gender === "n") {
-						element_list.push("a_" + number + "_" + value);
-					} else if (number === "d") {
-					} else {
-						element_list.push(gender + "_" + number + "_" + value);
-					}
-				}
-			}
-		}
 	}
 	if (type !== "noun") {
 		for (element of element_list) {
@@ -156,41 +149,54 @@ async function init(url, passed) {
 function changeOrder(order, init) {
 	element_list = [];
 	let order_list = orders[order];
+	console.log(order_list);
 
 	let answer = "";
 	let forms = word["forms"];
-	for (let number of numbers) {
-		let previous_element = document.getElementById(number + "_header_row");
-		for (let value of order_list) {
-			let current_element_name = number + "_" + value + "_row";
-			if (passed_type === "sga_noun") {
-				if (number == "d" && value == "voc") {
-					continue;
-				} else if (number == "d" || value == "voc") {
-					element_list.push(number + "_" + value + "_part");
-					element_list.push(number + "_" + value + "_part_im");
-					element_list.push(number + "_" + value);
-					element_list.push(number + "_" + value + "_im");
-					answer = forms[number + "_" + value + "_part"] + "<sup>" + forms[number + "_" + value + "_part_im"].toUpperCase() + "</sup> " + forms[number + "_" + value] + "<sup>" + forms[number + "_" + value + "_im"].toUpperCase() + "</sup>";
+	for (let gender of genders) {
+		for (let number of numbers) {
+			let previous_element = document.getElementById(number + "_header_row");
+			for (let value of order_list) {
+				let extra_answer = "";
+				let form_key = "";
+				let current_element_name = number + "_" + value + "_row";
+				if (passed_type === "sga_noun") {
+					if (number === "d" && value === "voc") {
+						continue;
+					} else if (number === "d" || value === "voc") {
+						element_list.push(number + "_" + value + "_part");
+						element_list.push(number + "_" + value + "_part_im");
+						element_list.push(number + "_" + value);
+						element_list.push(number + "_" + value + "_im");
+						form_key = number + "_" + value + "_part";
+						extra_answer = "<sup>" + forms[number + "_" + value + "_part_im"].toUpperCase() + "</sup> " + forms[number + "_" + value] + "<sup>" + forms[number + "_" + value + "_im"].toUpperCase() + "</sup>";
+					} else {
+						element_list.push(number + "_" + value);
+						element_list.push(number + "_" + value + "_im");
+						form_key = number + "_" + value;
+						extra_answer = "<sup>" + forms[number + "_" + value + "_im"].toUpperCase() + "</sup>";
+					}
+				} else if (passed_type === "sga_article") {
+					if ((number === "d" && gender !== "a") || (number !== "d" && gender === "a")) {
+						continue
+					} else {
+						element_list.push(gender + "_" + number + "_" + value);
+						element_list.push(gender + "_" + number + "_" + value + "_im");
+						console.log(element_list);
+						form_key = gender + "_" + number + "_" + value;
+						extra_answer = "<sup>" + forms[gender + "_" + number + "_" + value + "_im"].toUpperCase() + "</sup>";
+					}
 				} else {
 					element_list.push(number + "_" + value);
-					element_list.push(number + "_" + value + "_im");
-					answer = forms[number + "_" + value] + "<sup>" + forms[number + "_" + value + "_im"].toUpperCase() + "</sup>";
+					form_key = number + "_" + value;
 				}
-			} else if (passed_type === "sga_article") {
-				element_list.push(number + "_" + value);
-				element_list.push(number + "_" + value + "_im");
-				console.log(element_list);
-				answer = forms[number + "_" + value] + "<sup>" + forms[number + "_" + value + "_im"].toUpperCase() + "</sup>";
-			} else {
-				element_list.push(number + "_" + value);
-				answer = forms[number + "_" + value];
-			}
-			pretty_answers[number + "_" + value + "_cor"] = answer;
-			if (init === 0) {
-				let element = document.getElementById(current_element_name);
-				previous_element.insertAdjacentElement("afterend", element);
-				previous_element = element;
+				answer = forms[form_key] + "extra_answer";
+				pretty_answers[number + "_" + value + "_cor"] = answer;
+				if (init === 0) {
+					let element = document.getElementById(current_element_name);
+					previous_element.insertAdjacentElement("afterend", element);
+					previous_element = element;
+				}
 			}
 		}
 	}
