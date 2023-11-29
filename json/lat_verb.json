@@ -175,5 +175,78 @@
       "p_3": "dormiunt"
     }
   }
-]
+],
+"dep": [
+  {
+    "word": "minor",
+    "word_more": "minor, 1 dep: I threaten",
+    "forms": {
+      "s_1": "minor",
+      "s_2": "minaris;minare",
+      "s_3": "minatur",
+      "p_1": "minamur",
+      "p_2": "minamini",
+      "p_3": "minantur"
+    }
+  },
+  {
+    "word": "polliceor",
+    "word_more": "polliceor, 2 dep: I promise",
+    "forms": {
+      "s_1": "polliceor",
+      "s_2": "polliceris;pollicere",
+      "s_3": "pollicetur",
+      "p_1": "pollicemur",
+      "p_2": "pollicemini",
+      "p_3": "pollicentur"
+    }
+  },
+  {
+    "word": "loquor",
+    "word_more": "loquor, 3 dep: I speak",
+    "forms": {
+      "s_1": "loquor",
+      "s_2": "loqueris;loquere",
+      "s_3": "loquitur",
+      "p_1": "loquimur",
+      "p_2": "loquimini",
+      "p_3": "loquuntur"
+    }
+  },
+  {
+    "word": "loquor",
+    "word_more": "loquor, 3 dep: I speak",
+    "forms": {
+      "s_1": "loquor",
+      "s_2": "loqueris;loquere",
+      "s_3": "loquitur",
+      "p_1": "loquimur",
+      "p_2": "loquimini",
+      "p_3": "loquuntur"
+    }
+  },
+  {
+    "word": "mentior",
+    "word_more": "mentior, 4 dep: I lie",
+    "forms": {
+      "s_1": "mentior",
+      "s_2": "mnetiris;mentire",
+      "s_3": "mentitur",
+      "p_1": "mentimur",
+      "p_2": "mentimini",
+      "p_3": "mentiuntur"
+    }
+  },
+  {
+    "word": "progredior",
+    "word_more": "progredior, 3/4 dep: I advance",
+    "forms": {
+      "s_1": "progredior",
+      "s_2": "progrederis;progredere",
+      "s_3": "progreditur",
+      "p_1": "progredimur",
+      "p_2": "progredimini",
+      "p_3": "progrediuntur"
+    }
+  }]
 }

@@ -455,6 +455,60 @@
     }
   }
 ],
-"d4": [],
-"d5": []
+"d4": [
+  {
+    "word": "manus",
+    "word_more": "manus, -us, 4f: hand",
+    "forms": {
+      "s_nom": "manus",
+      "p_nom": "manus",
+      "s_acc": "manum",
+      "p_acc": "manus",
+      "s_gen": "manus",
+      "p_gen": "manuum",
+      "s_dat": "manui",
+      "p_dat": "manibus",
+      "s_abl": "manu",
+      "p_abl": "manibus",
+      "s_voc": "manus",
+      "p_voc": "manus"
+    }
+  },
+  {
+    "word": "domus",
+    "word_more": "domus, -us, 4f: house",
+    "forms": {
+      "s_nom": "domus",
+      "p_nom": "domus",
+      "s_acc": "domum",
+      "p_acc": "domus",
+      "s_gen": "domus;domi",
+      "p_gen": "domorum;domuum",
+      "s_dat": "domui;domo",
+      "p_dat": "domibus",
+      "s_abl": "domo",
+      "p_abl": "domibus",
+      "s_voc": "domus",
+      "p_voc": "domus"
+    }
+  }],
+"d5": [
+  {
+    "word": "res",
+    "word_more": "res, rei, 5f: matter",
+    "forms": {
+      "s_nom": "res",
+      "p_nom": "res",
+      "s_acc": "rem",
+      "p_acc": "res",
+      "s_gen": "rei",
+      "p_gen": "rerum",
+      "s_dat": "rei",
+      "p_dat": "rebus",
+      "s_abl": "re",
+      "p_abl": "rebus",
+      "s_voc": "res",
+      "p_voc": "res"
+    }
+  }]
 }
