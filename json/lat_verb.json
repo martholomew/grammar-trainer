@@ -248,5 +248,94 @@
       "p_2": "progredimini",
       "p_3": "progrediuntur"
     }
-  }]
+  }
+],
+"fut": [
+  {
+    "word": "audiam",
+    "word_more": "audiam, 4d: I will hear",
+    "forms": {
+      "s_1": "audiam",
+      "s_2": "audies",
+      "s_3": "audiet",
+      "p_1": "audiemus",
+      "p_2": "audietis",
+      "p_3": "audient"
+    }
+  },
+  {
+    "word": "faciam",
+    "word_more": "faciam, 3/4d: I will do",
+    "forms": {
+      "s_1": "faciam",
+      "s_2": "facies",
+      "s_3": "faciet",
+      "p_1": "faciemus",
+      "p_2": "facietis",
+      "p_3": "facient"
+    }
+  }
+],
+"perf": [
+  {
+    "word": "amaui",
+    "word_more": "amaui, 1d: I loved",
+    "forms": {
+      "s_1": "amaui",
+      "s_2": "amauisiti;amasti",
+      "s_3": "amauit",
+      "p_1": "amauimus",
+      "p_2": "amauistis;amastis",
+      "p_3": "amauerunt;amarunt;amauere"
+    }
+  },
+  {
+    "word": "habui",
+    "word_more": "habui, 2d: I had",
+    "forms": {
+      "s_1": "habui",
+      "s_2": "habuisti",
+      "s_3": "habuit",
+      "p_1": "habuimus",
+      "p_2": "habuistis",
+      "p_3": "habuerunt;habuere"
+    }
+  },
+  {
+    "word": "dixi",
+    "word_more": "dixi, 3d: I said",
+    "forms": {
+      "s_1": "dixi",
+      "s_2": "dixisti",
+      "s_3": "dixit",
+      "p_1": "diximus",
+      "p_2": "dixistis",
+      "p_3": "dixerunt;dixere"
+    }
+  },
+  {
+    "word": "audiui",
+    "word_more": "audiui, 4d: I heard",
+    "forms": {
+      "s_1": "audiui",
+      "s_2": "audiuisti;audiisti;audisti",
+      "s_3": "audiuit",
+      "p_1": "audiuimus",
+      "p_2": "audiuistis;audistis",
+      "p_3": "audiuerunt;audiuere;audierunt;audiere"
+    }
+  },
+  {
+    "word": "feci",
+    "word_more": "feci, 3/4d: I did",
+    "forms": {
+      "s_1": "feci",
+      "s_2": "fecisti",
+      "s_3": "fecit",
+      "p_1": "fecimus",
+      "p_2": "fecistis",
+      "p_3": "fecerunt;fecere"
+    }
+  },
+]
 }
